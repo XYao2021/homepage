@@ -7,6 +7,8 @@ redirect_from:
   - /about.html
 ---
 
+{% include base_path %}
+
 I am a Ph.D. candidate in Electrical and Computer Engineering at the
 [University of Florida](https://www.ece.ufl.edu/), advised by Dr. Mingyue Ji.
 I began my Ph.D. at the University of Utah in 2021 and moved to UF with my
@@ -46,8 +48,8 @@ Research
 * **UAV wireless platform.** Custom-assembled drones with wireless payloads
   and a ground-to-air communication protocol for airborne experiments.
 
-See [Projects](/portfolio/) for details on each direction and
-[Publications](/publications/) for papers.
+See [Projects]({{ base_path }}/portfolio/) for details on each direction and
+[Publications]({{ base_path }}/publications/) for papers.
 
 News
 ======
