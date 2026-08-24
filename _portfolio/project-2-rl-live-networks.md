@@ -1,13 +1,15 @@
 ---
-title: "Reinforcement Learning on Live Networks"
-excerpt: "New state representations for RL-based dynamic control of communication systems — evaluated across algorithms in simulation and deployed on the physical testbed. (Utah → Florida)"
+title: "Constrained Optimization with Reinforcement Learning on Live Networks"
+excerpt: "Lyapunov-derived objectives under real-world constraints, novel RL state representations, and dynamic-control policies deployed on the EdgeAI Lab testbed. (Utah → Florida)"
 collection: portfolio
 ---
 
-Design of novel state representations for reinforcement-learning algorithms
-applied to communication-system control. Dynamic-control policies are
-evaluated across multiple RL algorithms in simulation and then deployed on
-the real-world wireless testbed.
+Constrained optimization for real-world communication problems using
+reinforcement learning: optimization objectives derived with Lyapunov
+functions under real-world constraints, novel state representations for RL
+algorithms applied to communication-system control, and dynamic-control
+policies evaluated in simulation and deployed on the EdgeAI Lab testbed
+across multiple RL algorithms.
 
 **Institution:** University of Utah → University of Florida
-· **Advisor:** Dr. Mingyue Ji · **Tech:** Python, RL
+· **Advisor:** Dr. Mingyue Ji · **Tech:** Python, RL, Lyapunov optimization
