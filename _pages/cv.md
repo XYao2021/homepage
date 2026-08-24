@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-[Download the full CV as a PDF](/files/Xin_Yao_CV.pdf){: .btn .btn--primary}
+[Download the full CV as a PDF]({{ base_path }}/files/Xin_Yao_CV.pdf){: .btn .btn--primary}
 
 Education
 ======

@@ -7,6 +7,8 @@ redirect_from:
   - /about.html
 ---
 
+{% include base_path %}
+
 I am a Ph.D. candidate in Electrical and Computer Engineering at the
 [University of Florida](https://www.ece.ufl.edu/), advised by Dr. Mingyue Ji.
 I began my Ph.D. at the University of Utah in 2021 and moved to UF with my
@@ -35,8 +37,8 @@ My research sits where machine learning meets wireless systems.
 * **Platforms.** I assemble UAVs with integrated wireless payloads and am
   building an AWS-hosted web interface for remote testbed access.
 
-See the [Projects](/portfolio/) page for details on each direction, and
-[Publications](/publications/) for papers.
+See the [Projects]({{ base_path }}/portfolio/) page for details on each direction, and
+[Publications]({{ base_path }}/publications/) for papers.
 
 <!-- EDIT: Update this news list with your own items; newest first. -->
 News
