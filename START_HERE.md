@@ -1,35 +1,34 @@
-# Your customized Academic Pages site — what to do next
+# Xin Yao's homepage — how to maintain it
 
-This is the academicpages.github.io template (the most-starred academic
-homepage template on GitHub, MIT-licensed), already customized for Xin Yao.
+This site uses the [Academic Pages](https://academicpages.github.io/)
+template (Jekyll, MIT-licensed), the most widely used template for academic
+personal websites. It is served at https://xyao2021.github.io/homepage/.
 
-## Deploy (one time)
-1. Create a GitHub account, then a new **Public** repository named exactly
-   `YOUR-USERNAME.github.io`.
-2. Upload **all files in this folder** to the repository (Add file → Upload
-   files → drag everything → Commit).
-3. Wait 1–2 minutes; your site is live at `https://YOUR-USERNAME.github.io`.
+## Deploy
+Every push to the `main` branch of `XYao2021/homepage` runs the GitHub
+Actions workflow in `.github/workflows/deploy.yml`, which builds the site and
+publishes it to the `gh-pages` branch. Changes are live one to two minutes
+after the push.
 
-## Required edits (5 minutes)
-- `_config.yml` — replace the two `YOUR-GITHUB-USERNAME` placeholders
-  (lines marked `# EDIT`), and optionally paste your Google Scholar /
-  GitHub / LinkedIn details in the author block to turn on those icons.
-- `images/profile.png` — your photo is already installed (cropped to
-  head-and-shoulders). To change it later, upload a new square-ish image
-  with this exact filename.
+## Profile links
+Google Scholar, LinkedIn and GitHub are set in the `author:` block of
+`_config.yml`. Add `orcid` there if you get an ORCID.
 
 ## Ongoing edits
-- **Publications:** copy a file in `_publications/`, rename it
-  `YYYY-MM-DD-short-title.md`, fill in the fields, and delete the two
-  TEMPLATE entries when done. `category: manuscripts` → Journal Articles,
-  `category: conferences` → Conference Papers.
-- **Talks:** same pattern in `_talks/` (one real talk is already in).
-- **Projects:** edit the six files in `_portfolio/`; add photos to
-  `/images/` and embed them.
+- **Publications:** copy a file in `_publications/`, name it
+  `YYYY-MM-DD-short-title.md`, and fill in the fields.
+  `category: manuscripts` → Journal Articles, `category: conferences` →
+  Conference Papers. Add `paperurl` (DOI link) when available.
+  The FORGE-LoRa entry still needs the conference name once it is announced.
+- **Talks:** same pattern in `_talks/`.
+- **Projects:** edit the files in `_portfolio/`; add photos to `images/`.
 - **News:** edit the News list at the bottom of `_pages/about.md`.
 - **CV:** edit `_pages/cv.md`; the PDF download button points to
-  `files/Xin_Yao_CV.pdf` (your CV is already included — when it updates,
-  upload the new PDF with this exact same filename and the link keeps
-  working).
+  `files/Xin_Yao_CV.pdf`. Upload a new PDF with the same filename to update it.
+- **Photo:** replace `images/profile.png` with a square image of the same name.
 - Teaching and Blog pages are hidden from the menu; re-enable them in
   `_data/navigation.yml` when you have content.
+
+## Preview locally
+With Docker installed: `docker compose up`, then open
+http://localhost:4000/homepage/.
