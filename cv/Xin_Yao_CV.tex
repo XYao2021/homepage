@@ -98,16 +98,14 @@ advisor's research group in Aug.\ 2024)}
 
 % ============================================================================
 \section{Research Experience}
-\entry{Graduate Research Assistant, EdgeAI Lab (Prof. Mingyue Ji)}{08/2021 -- present}
+\entry{Doctoral Researcher, EdgeAI Lab (Advisor: Prof. Mingyue Ji)}{08/2021 -- present}
 \sub{University of Utah (08/2021 -- 07/2024) and University of Florida (08/2024 -- present)}
 
 % ----------------------------------------------------------------------------
 \proj{EdgeAI Lab: Real-World Wireless Communication Testbed}
-\meta{University of Florida \textperiodcentered\ Platform for the over-the-air experiments in [C1], [C2], [C4]}
+\meta{University of Florida \textperiodcentered\ Platform for the over-the-air experiments in [C1], [C4]}
 \begin{itemize}
-  \item Implemented the physical-layer software stack of the lab's wireless testbed in C++: modulation and
-        demodulation, pulse-shaping and filtering, frame and symbol synchronization, channel encoding and
-        decoding, and estimation and correction of carrier-frequency offset and phase offset.
+  \item Implemented the physical-layer software stack of the lab's wireless testbed in C++: modulation and demodulation, filtering, synchronization, channel encoding and decoding, and correction of carrier-frequency offset and phase offset.
   \item Built Python APIs on top of the C++ core so that over-the-air experiments can be scripted, repeated,
         and parameterized from a single configuration; designed automated experiment workflows that adapt to
         heterogeneous physical-layer hardware (USRP software-defined radios and LoRa radios).
@@ -115,17 +113,15 @@ advisor's research group in Aug.\ 2024)}
         and per-slot LoRa PHY adaptation) on both lab-scale and building-scale deployments of the testbed,
         and used the platform for the real-time LoRa experiments reported in [C4] and the multi-hop LoRa
         experiments in [C1].
-  \item Technologies: C++, Python, USRP/UHD, LoRa transceivers, Linux.
+  \item Technologies: C++, Python, USRP software-defined radios, LoRa radios, Linux.
 \end{itemize}
 
 % ----------------------------------------------------------------------------
 \proj{UnionLabs: AWS-Based Remote Access and Sharing of NextG and IoT Testbeds}
 \meta{University of Florida \textperiodcentered\ NSF-funded project (CIRC award, 2025--2027) \textperiodcentered\ Poster [P2], demo [P3]}
 \begin{itemize}
-  \item Developed and deployed the AWS-hosted web user interface through which remote users reserve and
-        access the wireless testbeds.
-  \item Designed the physical-layer (PHY) code paths for heterogeneous hardware, including USRP
-        software-defined radios and LoRa devices, so that the same experiment can target different radios.
+  \item Developed and deployed the AWS-hosted web user interface for remote access to the wireless testbeds.
+  \item Designed the physical-layer (PHY) code for different hardware, including USRP software-defined radios and LoRa devices.
   \item Designed the unified \emph{Union API} that reads and drives the different PHY implementations and
         connects them automatically to users' learning or optimization algorithms, and an abstraction layer
         that lets users run the PHY and Union API with a single command.
@@ -140,18 +136,14 @@ advisor's research group in Aug.\ 2024)}
 \proj{Constrained Optimization for Real-World Wireless Problems with Reinforcement Learning}
 \meta{University of Utah and University of Florida \textperiodcentered\ Publications [C4], [C5]; poster [P4]}
 \begin{itemize}
-  \item Derived optimization objectives with Lyapunov drift-plus-penalty (LDPP) functions under real-world
-        constraints (e.g., power, interference, and queue stability), turning long-term constrained problems
-        into per-slot decisions that a learning agent can act on.
+  \item Derived optimization objectives with Lyapunov drift-plus-penalty (LDPP) functions under real-world constraints, turning long-term constrained problems into per-slot decisions that a learning agent can act on.
   \item Designed novel state representations for reinforcement-learning algorithms applied to
         communication-system control, and evaluated Q-learning, DDPG, and MADDPG policies both in simulation
         and in deployment on the EdgeAI Lab testbed.
-  \item Proposed LDPP-MADDPG, a distributed power-allocation scheme for mmWave cellular networks in which
-        each base station acts as a multi-agent DDPG agent guided by a Lyapunov drift-plus-penalty objective
-        [C5]; an earlier MADDPG power-allocation study used measurement data from the POWDER platform [P4].
+  \item Proposed LDPP-MADDPG, a distributed power-allocation scheme for mmWave cellular networks that combines a Lyapunov drift-plus-penalty objective with multi-agent DDPG [C5]; an earlier MADDPG power-allocation study used measurement data from the POWDER platform [P4].
   \item Carried out an experimental evaluation of reinforcement learning for spectrum sharing on a real-time
         LoRa testbed, comparing Q-learning, DDPG, and MADDPG on live hardware [C4].
-  \item Technologies: Python, PyTorch, reinforcement learning, Lyapunov optimization.
+  \item Technologies: Python, reinforcement learning, Lyapunov optimization.
 \end{itemize}
 
 % ----------------------------------------------------------------------------
@@ -160,8 +152,7 @@ advisor's research group in Aug.\ 2024)}
 \begin{itemize}
   \item Derived the optimization objective for multi-hop LoRa networks with Lyapunov functions under
         real-world constraints.
-  \item Designed the system architecture for jointly adapting LoRa PHY parameters (e.g., spreading factor,
-        bandwidth, coding rate, and transmit power) on a per-slot basis.
+  \item Designed the system architecture for jointly adapting the LoRa PHY parameters on a per-slot basis.
   \item Building on the joint-adaptation method, designed a path discovery and optimization system that keeps
         multi-hop communication always live against interference and hardware outages.
   \item Evaluated the dynamic-control policies in simulation and in deployment on the EdgeAI Lab testbed across
@@ -173,10 +164,7 @@ advisor's research group in Aug.\ 2024)}
 \proj{LoFiLoc: Device-Free LoRa Fingerprint Indoor Localization with Commodity Radios}
 \meta{University of Florida \textperiodcentered\ Publication [C2] (IEEE MILCOM 2026 Workshops, accepted)}
 \begin{itemize}
-  \item Device-free indoor localization that fingerprints LoRa channel measurements collected with commodity
-        LoRa radios, so that a target carrying no device can be localized from changes in the wireless channel.
-  \item Designed the fingerprint data collection and the localization pipeline, and evaluated the system with
-        commodity hardware in an indoor environment.
+  \item Device-free indoor localization based on fingerprints of LoRa channel measurements collected with commodity LoRa radios, so that a target carrying no device can be localized from changes in the wireless channel.
 \end{itemize}
 
 % ----------------------------------------------------------------------------
@@ -196,9 +184,7 @@ advisor's research group in Aug.\ 2024)}
         (error-compensation) mechanism for communication compression under data heterogeneity.
   \item Proposed the key proof technique for the adaptive error-feedback mechanism, established convergence
         guarantees for the proposed algorithm, and compared its convergence rate with existing algorithms.
-  \item Evaluated the algorithm against existing decentralized learning methods under different compression
-        levels, network topologies, and data-heterogeneity settings.
-  \item Technologies: Python, PyTorch, optimization theory.
+  \item Evaluated the algorithm against existing decentralized learning methods under a range of settings. \item Technologies: Python, optimization theory.
 \end{itemize}
 
 % ----------------------------------------------------------------------------
@@ -284,8 +270,7 @@ My name is shown in bold.
         in mmWave Cellular Networks,'' in \emph{Proc.\ IEEE Military Communications Conference (MILCOM), 6G and
         Spectrum Security for Critical Communication (6GSECC) Workshop}, Los Angeles, CA, USA, Oct.\ 2025.\\
         {\small Distributed power allocation for mmWave cellular networks that combines a Lyapunov
-        drift-plus-penalty (LDPP) objective with multi-agent deep deterministic policy gradient (MADDPG), each
-        base station acting as an agent.}
+        drift-plus-penalty (LDPP) objective with multi-agent deep deterministic policy gradient (MADDPG).}
   \item K.\ Wan, \me, H.\ Sun, M.\ Ji, and G.\ Caire, ``GroupSecAgg: Information Theoretic Secure Aggregation
         with Uncoded Groupwise Keys,'' in \emph{Proc.\ IEEE International Conference on Communications (ICC)},
         Rome, Italy, May--Jun.\ 2023, pp.\ 3890--3895.
@@ -349,7 +334,7 @@ My name is shown in bold.
   \item \textbf{Programming:} Python, C/C++, Java, JavaScript, MATLAB, Arduino, JSON, XHTML/DHTML.
   \item \textbf{Machine learning:} reinforcement learning (Q-learning, DDPG, MADDPG, transformer-enhanced
         policies), federated learning, decentralized learning, communication compression and error feedback,
-        secure aggregation, distributed and parallel computing, PyTorch.
+        secure aggregation, distributed and parallel computing.
   \item \textbf{Wireless communications and signal processing:} physical-layer implementation (modulation and
         demodulation, synchronization, filtering, channel encoding and decoding, carrier-frequency and
         phase-offset correction), software-defined radio (USRP), LoRa and low-power multi-hop networking,
