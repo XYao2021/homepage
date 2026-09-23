@@ -1,1 +1,5 @@
 .DS_Store
+
+# Local reference material for editing the CV. Kept out of git because the
+# whole repository is published at xyao2021.github.io/homepage/.
+cv/reference/
