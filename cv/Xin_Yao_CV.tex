@@ -75,6 +75,34 @@ and federated learning; error feedback and communication compression; informatio
 aggregation; mmWave and RIS-assisted systems; wireless sensing and indoor localization.
 
 % ============================================================================
+\section{Research Statement (Summary)}
+The long-term goal of my research is to make learning-driven wireless networks practical: networks that use
+machine learning to allocate resources, share spectrum, and adapt the physical layer, with guarantees of
+convergence, privacy, and reliability that continue to hold after deployment on real hardware. A central
+motivation is the gap between simulation and reality: many learning algorithms proposed for wireless systems
+perform well in simulation but degrade on real hardware, where carrier-frequency offsets, timing errors,
+interference, and hardware outages violate their design assumptions. I address this gap from both directions,
+by developing algorithms whose analysis accounts for real-world constraints and by building experimental
+infrastructure that makes over-the-air validation systematic.
+
+My doctoral research follows three threads: (1) \emph{adaptive error feedback for distributed learning},
+where A-DEFEAT compensates for communication-compression error in decentralized learning with a new proof
+technique and convergence analysis; (2) \emph{reinforcement learning for real-world wireless networks}, where
+objectives are derived from Lyapunov functions that encode real-world constraints, state representations are
+built from quantities a deployed system can observe, and Q-learning, DDPG, and MADDPG policies are compared in
+simulation before deployment (spectrum sharing on a real-time LoRa testbed, LDPP-MADDPG power allocation, and
+FORGE-LoRa multi-hop adaptation); and (3) \emph{wireless testbed development}, including the physical-layer
+stack of the EdgeAI Lab testbed, the UnionLabs remote-access platform, and UAV nodes.
+
+Future plans build on these results in three directions: cross-layer learning-based adaptation for
+heterogeneous networks with safe online learning under non-stationary conditions; digital-twin pipelines
+calibrated from testbed measurements, with quantitative criteria for when a policy trained in the twin can be
+deployed over the air; and decentralized learning over unreliable wireless networks with time-varying
+topologies, lossy links, and quantized communication, connected to secure aggregation under user dropouts. In
+parallel, I plan to develop UnionLabs into shared community infrastructure federated across institutions, with
+support sought from NSF CNS/NeTS and CCF programs, a CAREER proposal, and industry partnerships in AI-for-RAN.
+
+% ============================================================================
 \section{Education}
 \entry{University of Florida, Gainesville, FL, USA}{08/2024 -- present}
 \sub{Ph.D. Candidate, Electrical and Computer Engineering}
@@ -327,6 +355,59 @@ My name is shown in bold.
   \item ``MADDPG-Based Power Allocation Scheme Using Measurement Data from POWDER'' (poster), Warren B.\ Nelms
         Annual IoT Conference, University of Florida, Gainesville, FL, USA, Dec.\ 2024.
 \end{enumerate}
+
+% ============================================================================
+\section{Teaching Experience}
+\begin{itemize}
+  \item \textbf{Lab Instructor, EEL 4514 Communication Systems and Components, University of Florida.} Designed
+        and verified the lab sessions on signal processing, held and graded the lab sessions, and held office
+        hours for course-related questions before exams.
+  \item \textbf{Teaching Assistant, ECE 5510 Random Processes, University of Utah.} Assisted in designing the
+        lecture slides, graded homework and exams, and held weekly office hours to answer course-related
+        questions.
+  \item \textbf{Project Instructor, UnionLabs Web Design (undergraduate project), University of Florida.}
+        Directed and guided students through the web-design part of the UnionLabs project, from background
+        knowledge to design skills including JavaScript, ReactJS, and the communication logic between the web
+        interface and the testbeds.
+  \item \textbf{Project Instructor, Automatic System Design (undergraduate project), University of Florida.}
+        Guided students to understand the structure and code of the telco system, an AI-in-the-loop evaluation
+        system, and how to use the code for customized purposes, and introduced hardware-in-the-loop design
+        based on the telco system.
+  \item \textbf{Testbed Training and Onboarding, UnionLabs.} Onboard collaborators from multiple universities,
+        ranging from machine-learning researchers new to radios to communications engineers new to
+        reinforcement learning, onto the shared wireless testbeds: prepare documentation for the customized
+        system, design worked examples, and structure first sessions so that every user runs a real
+        over-the-air experiment quickly.
+\end{itemize}
+
+% ============================================================================
+\section{Teaching Statement (Summary)}
+\textbf{Philosophy.} Students learn engineering most effectively when theory is connected to the physical
+world as early and as often as possible. In wireless communications and machine learning this connection is
+concrete: a matched filter derived on paper can be observed as a constellation diagram from the student's own
+transmitter, a coding theorem can be verified as a measured shift in a bit-error-rate curve, and a learning
+algorithm can be run and measured on real machines. My goal is to help students build a solid conceptual
+foundation, the practical skill to implement and debug real systems, and the confidence that comes from seeing
+their own analysis confirmed by measurement.
+
+\textbf{Methods.} Theoretical foundations in class, with emphasis on the mathematical expressions; live
+software-defined-radio demonstrations so that effects such as intersymbol interference and coding gain are
+observed as they are derived; project-based homework tested over the air or against recorded real signals
+through remote testbed access of the kind UnionLabs provides; and projects scaffolded in explicit stages from
+simulation to hardware, so that students with different preparation all reach the final over-the-air
+milestone. Learning is assessed through staged milestones that reward implementation, measurement, and
+debugging alongside analysis, and the course is adjusted using student feedback throughout the semester.
+
+\textbf{Mentoring.} Early contact with the real system followed by growing ownership: a new student runs a
+working over-the-air experiment in the first weeks, then takes responsibility for one testbed component or
+algorithm, growing from reproducing a known result to extending it to leading a first-authored paper, with
+regular individual meetings, projects matched to each student's strengths, and frequent presentations.
+
+\textbf{Courses I am prepared to teach.} Signals and systems, digital communications, and digital signal
+processing (undergraduate); wireless system design and networking courses that connect the physical and MAC
+layers; machine learning for wireless networks (graduate); and a new project-based course, \emph{Hands-On
+Wireless Systems with Software-Defined Radios}, in which students implement a complete communication link and
+then apply a learning algorithm to control it.
 
 % ============================================================================
 \section{Technical Skills}
