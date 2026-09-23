@@ -37,6 +37,7 @@
         <ul>
           <li><a href="#talks">Talks</a></li>
           <li><a href="#posters">Posters &amp; Demos</a></li>
+          <li><a href="#teaching">Teaching</a></li>
         </ul>
       </div>
     </nav>
@@ -150,7 +151,12 @@
         My research develops learning-driven and information-theoretic methods for real-world wireless systems. I
         combine theoretical analysis, including Lyapunov-based optimization, convergence analysis, and
         information-theoretic limits, with algorithm and system design, and I evaluate the resulting methods on
-        wireless testbeds that I build from the physical layer up.
+        wireless testbeds that I build from the physical layer up. A central motivation is the gap between simulation
+        and reality: many learning algorithms proposed for wireless systems perform well in simulation but degrade on
+        real hardware, where carrier-frequency offsets, timing errors, interference, and hardware outages violate
+        their design assumptions. I address this gap from both directions, with algorithms whose analysis accounts
+        for real-world constraints and with experimental infrastructure that makes over-the-air validation
+        systematic.
       </p>
 
       <h4>Real-World Wireless Testbeds (EdgeAI Lab)</h4>
@@ -197,6 +203,16 @@
         Custom-assembled drones with integrated wireless communication payloads for airborne networking experiments:
         physical build, flight-controller initialization and tuning, payload design, and the communication protocol
         between ground devices and the airborne node.
+      </p>
+
+      <h4>Future Directions</h4>
+      <p>
+        Cross-layer learning-based adaptation for heterogeneous networks, with safe online learning under
+        non-stationary conditions; digital-twin pipelines calibrated from testbed measurements, with quantitative
+        criteria for when a policy trained in the twin can be deployed over the air; and decentralized learning over
+        unreliable wireless networks with time-varying topologies, lossy links, and quantized communication,
+        connected to secure aggregation under user dropouts. In parallel, I plan to develop UnionLabs into shared
+        community infrastructure federated across institutions.
       </p>
 
       <!-- ==================== Publications ==================== -->
@@ -278,6 +294,17 @@
         </tr>
       </table>
 
+      <h4>Manuscripts in Preparation or Under Review</h4>
+      <table class="pubs">
+        <tr>
+          <td class="tag">[M1]</td>
+          <td>
+            <u>X. Yao</u>, S. Wang, J. Perazzone, K. S. Chan, and M. Ji, "Compressed Decentralized Learning with
+            Error-Feedback under Data Heterogeneity," 2026.
+          </td>
+        </tr>
+      </table>
+
       <!-- ==================== Talks ==================== -->
       <h3 id="talks">Talks</h3>
       <table class="pubs">
@@ -332,7 +359,7 @@
           <td class="date">Dec. 2025</td>
           <td>
             <i>OSWireless: Automatic System to Maximize Network Throughputs</i> (live demonstration), Warren B. Nelms
-            Annual IoT Conference, University of Florida, Gainesville, FL, USA.
+            Annual IoT Conference, University of Florida, Gainesville, FL, USA. <i>Third Prize, Demo Competition.</i>
           </td>
         </tr>
         <tr>
@@ -351,9 +378,62 @@
         </tr>
       </table>
 
+            <!-- ==================== Teaching ==================== -->
+      <h3 id="teaching">Teaching &amp; Mentoring</h3>
+      <table class="pubs">
+        <tr>
+          <td class="date">EEL 4514</td>
+          <td>
+            <b>Lab Instructor</b>, Communication Systems and Components, University of Florida. Designed and
+            verified the lab sessions on signal processing, held and graded the lab sessions, and held office hours
+            for course-related questions before exams.
+          </td>
+        </tr>
+        <tr>
+          <td class="date">ECE 5510</td>
+          <td>
+            <b>Teaching Assistant</b>, Random Processes, University of Utah. Assisted in designing the lecture
+            slides, graded homework and exams, and held weekly office hours to answer course-related questions.
+          </td>
+        </tr>
+        <tr>
+          <td class="date">UnionLabs</td>
+          <td>
+            <b>Project Instructor</b>, UnionLabs web design (undergraduate project), University of Florida. Directed
+            and guided students through the web-design part of the UnionLabs project, from background knowledge to
+            design skills including JavaScript, ReactJS, and the communication logic between the web interface and
+            the testbeds.
+          </td>
+        </tr>
+        <tr>
+          <td class="date">Telco system</td>
+          <td>
+            <b>Project Instructor</b>, automatic system design (undergraduate project), University of Florida.
+            Guided students to understand the structure and code of the telco system, an AI-in-the-loop evaluation
+            system, and how to use the code for customized purposes, and introduced hardware-in-the-loop design
+            based on the telco system.
+          </td>
+        </tr>
+        <tr>
+          <td class="date">UnionLabs</td>
+          <td>
+            <b>Testbed Training</b>. Onboard collaborators from multiple universities onto the shared wireless
+            testbeds: prepare documentation for the customized system, design worked examples, and structure first
+            sessions so that every user runs a real over-the-air experiment quickly.
+          </td>
+        </tr>
+      </table>
+
       <!-- ==================== Awards ==================== -->
       <h3 id="awards">Honors &amp; Awards</h3>
       <table class="pubs">
+        <tr>
+          <td class="date">2025</td>
+          <td>
+            Third Prize, Demo Competition, Warren B. Nelms Annual IoT Conference, University of Florida
+            (UnionLabs / OSWireless demonstration).
+          </td>
+        </tr>
         <tr>
           <td class="date">2017</td>
           <td>Third-Prize Scholarship, Tianjin University of Science and Technology.</td>
