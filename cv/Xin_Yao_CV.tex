@@ -131,7 +131,7 @@ advisor's research group in Aug.\ 2024)}
 
 % ----------------------------------------------------------------------------
 \proj{EdgeAI Lab: Real-World Wireless Communication Testbed}
-\meta{University of Florida \textperiodcentered\ Platform for the over-the-air experiments in [C1], [C4]}
+\meta{University of Florida \textperiodcentered\ Platform for the over-the-air experiments in [C1], [C4] \textperiodcentered\ Submitted manuscript [S2]}
 \begin{itemize}
   \item Implemented the physical-layer software stack of the lab's wireless testbed in C++: modulation and demodulation, filtering, synchronization, channel encoding and decoding, and correction of carrier-frequency offset and phase offset.
   \item Built Python APIs on top of the C++ core so that over-the-air experiments can be scripted, repeated,
@@ -141,6 +141,7 @@ advisor's research group in Aug.\ 2024)}
         and per-slot LoRa PHY adaptation) on both lab-scale and building-scale deployments of the testbed,
         and used the platform for the real-time LoRa experiments reported in [C4] and the multi-hop LoRa
         experiments in [C1].
+  \item Developed SONAR, a hardware-in-the-loop approach to synthesizing wireless systems [S2].
   \item Technologies: C++, Python, USRP software-defined radios, LoRa radios, Linux.
 \end{itemize}
 
@@ -162,7 +163,7 @@ advisor's research group in Aug.\ 2024)}
 
 % ----------------------------------------------------------------------------
 \proj{Constrained Optimization for Real-World Wireless Problems with Reinforcement Learning}
-\meta{University of Utah and University of Florida \textperiodcentered\ Publications [C4], [C5]; poster [P4]}
+\meta{University of Utah and University of Florida \textperiodcentered\ Publications [C4], [C5]; poster [P4]; submitted manuscript [S4]}
 \begin{itemize}
   \item Derived optimization objectives with Lyapunov drift-plus-penalty (LDPP) functions under real-world constraints, turning long-term constrained problems into per-slot decisions that a learning agent can act on.
   \item Designed novel state representations for reinforcement-learning algorithms applied to
@@ -171,12 +172,14 @@ advisor's research group in Aug.\ 2024)}
   \item Proposed LDPP-MADDPG, a distributed power-allocation scheme for mmWave cellular networks that combines a Lyapunov drift-plus-penalty objective with multi-agent DDPG [C5]; an earlier MADDPG power-allocation study used measurement data from the POWDER platform [P4].
   \item Carried out an experimental evaluation of reinforcement learning for spectrum sharing on a real-time
         LoRa testbed, comparing Q-learning, DDPG, and MADDPG on live hardware [C4].
+  \item Developed LYRIC, a Lyapunov-constrained multi-agent power-control method evaluated on measured LoRa
+        data [S4].
   \item Technologies: Python, reinforcement learning, Lyapunov optimization.
 \end{itemize}
 
 % ----------------------------------------------------------------------------
-\proj{FORGE-LoRa: Network Optimization with Low-Power (LoRa) Communication}
-\meta{University of Florida \textperiodcentered\ Publication [C1] (IEEE MILCOM 2026, accepted)}
+\proj{Resilient Multi-Hop LoRa Networks: FORGE-LoRa, HYDRA-LoRa, and CONCERT-LoRa}
+\meta{University of Florida \textperiodcentered\ Publication [C1] (IEEE MILCOM 2026, accepted); submitted manuscripts [S1], [S3]}
 \begin{itemize}
   \item Derived the optimization objective for multi-hop LoRa networks with Lyapunov functions under
         real-world constraints.
@@ -185,6 +188,8 @@ advisor's research group in Aug.\ 2024)}
         multi-hop communication always live against interference and hardware outages.
   \item Evaluated the dynamic-control policies in simulation and in deployment on the EdgeAI Lab testbed across
         multiple reinforcement-learning algorithms.
+  \item Extended the LoRa mesh work to anti-jamming operation: HYDRA-LoRa, anti-jamming multi-path selection for
+        LoRa mesh networks [S1], and CONCERT-LoRa, certified concurrency for anti-jamming LoRa mesh networks [S3].
   \item Technologies: LoRa, Python, reinforcement learning, Lyapunov optimization.
 \end{itemize}
 
@@ -319,7 +324,20 @@ My name is shown in bold.
         implementation compared against existing schemes with offline key sharing.}
 \end{enumerate}
 
-\subsection{Manuscripts in Preparation or Under Review}
+\subsection{Submitted Manuscripts (Under Review)}
+\begin{enumerate}[label={[S\arabic*]}]
+  \item \me, A.\ Bhuyan, and M.\ Ji, ``HYDRA-LoRa: Anti-Jamming Multi-Path Selection for LoRa Mesh Networks,''
+        submitted to \emph{IEEE International Conference on Communications (ICC)}, 2027.
+  \item \me\ and M.\ Ji, ``SONAR: Hardware-in-the-Loop Synthesis of Wireless Systems,'' submitted to
+        \emph{IEEE International Conference on Communications (ICC)}, 2027.
+  \item \me, A.\ Bhuyan, and M.\ Ji, ``CONCERT-LoRa: Certified Concurrency for Anti-Jamming LoRa Mesh
+        Networks,'' submitted to \emph{IEEE Internet of Things Journal}.
+  \item \me, X.\ Zhang, A.\ Bhuyan, and M.\ Ji, ``LYRIC: Lyapunov-Constrained Multi-Agent Power Control with
+        Measured LoRa Evaluation,'' submitted to \emph{IEEE Transactions on Cognitive Communications and
+        Networking}.
+\end{enumerate}
+
+\subsection{Other Manuscripts}
 \begin{enumerate}[label={[M\arabic*]}]
   \item \me, S.\ Wang, J.\ Perazzone, K.\ S.\ Chan, and M.\ Ji, ``Compressed Decentralized Learning with
         Error-Feedback under Data Heterogeneity,'' 2026.
