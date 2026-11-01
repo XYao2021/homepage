@@ -1,481 +1,313 @@
-% ============================================================================
-% Xin Yao -- academic curriculum vitae
-% Build:  latexmk -pdf Xin_Yao_CV.tex      (or: pdflatex Xin_Yao_CV.tex twice)
-% Then copy Xin_Yao_CV.pdf to ../assets/Xin_Yao_CV.pdf and push.
-% ============================================================================
-\documentclass[11pt,letterpaper]{article}
-
-\usepackage[margin=0.8in,top=0.7in,bottom=0.7in]{geometry}
-\usepackage[utf8]{inputenc}
+\documentclass[10pt]{article}
+\newcommand{\doctitle}{Curriculum Vitae}
+\usepackage[letterpaper,margin=0.72in,headheight=14pt,footskip=22pt]{geometry}
 \usepackage[T1]{fontenc}
-\usepackage{newtxtext,newtxmath}
-\usepackage{microtype}
-\usepackage{enumitem}
-\usepackage{titlesec}
-\usepackage{xcolor}
-\usepackage{tabularx}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage{lastpage}
-
-% ---------- section style: small caps + rule (matches the previous CV) -----
-\titleformat{\section}{\large\scshape\bfseries}{}{0em}{}[\vspace{-0.55em}\rule{\textwidth}{0.6pt}]
-\titlespacing*{\section}{0pt}{1.1em}{0.5em}
-\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
-\titlespacing*{\subsection}{0pt}{0.7em}{0.25em}
-
-% ---------- lists ------------------------------------------------------------
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.15em,topsep=0.2em,parsep=0pt,label=\textbullet}
-\setlist[enumerate]{leftmargin=2.6em,itemsep=0.35em,topsep=0.2em,parsep=0pt}
-
-% ---------- helpers ----------------------------------------------------------
-% \entry{left bold}{right-aligned date}
-\newcommand{\entry}[2]{\noindent\textbf{#1}\hfill\textbf{#2}\par}
-% \sub{plain line under an entry}
-\newcommand{\sub}[1]{\noindent #1\par}
-% \proj{project title}
-\newcommand{\proj}[1]{\vspace{0.45em}\noindent\textbf{#1}\par\vspace{0.1em}}
-% \meta{institution / advisor / related publications}
-\newcommand{\meta}[1]{\noindent{\small\textit{#1}}\par\vspace{0.1em}}
-% \me = my own name in author lists
-\newcommand{\me}{\textbf{X. Yao}}
-
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage[nobottomtitles*]{titlesec}
+\usepackage{xcolor,hyperref,enumitem,fancyhdr,parskip}
+\renewcommand{\bottomtitlespace}{0.12\textheight}
+\definecolor{accent}{HTML}{14365D}
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent,pdfauthor={Xin Yao},pdftitle={Curriculum Vitae}}
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.25em,itemsep=1.5pt,topsep=2pt,parsep=0pt}
+\setlist[enumerate]{itemsep=2pt,topsep=2pt,parsep=0pt}
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}[\vspace{-3pt}\color{accent}\titlerule]
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\titleformat{\subsection}{\normalsize\bfseries\color{accent}}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{7pt}{1pt}
 \pagestyle{fancy}
 \fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\fancyfoot[C]{\small Xin Yao \textperiodcentered\ Curriculum Vitae \textperiodcentered\ \thepage\ of \pageref{LastPage}}
-
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{0.2em}
+\fancyhead[L]{\small Xin Yao}
+\fancyhead[R]{\small \doctitle}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+% Yellow boxes mark details still to be filled in. Remove \fillin{} once the text is final.
+\newcommand{\fillin}[1]{\colorbox{yellow}{\strut #1}}
+% Project block: title, then an italic line with place, outputs and collaborators.
+\newcommand{\proj}[2]{\subsection*{#1}{\small\itshape #2}\par}
+\newcommand{\tech}[1]{\item \textit{Technologies.} #1}
 
 \begin{document}
-
-% ============================================================================
 \begin{center}
-  {\LARGE\scshape Xin Yao}\\[0.35em]
-  1928 SW 42nd Drive, Gainesville, FL 32607, USA\\
-  (+1) 571-236-1806 \textperiodcentered\ \href{mailto:xyao@ufl.edu}{xyao@ufl.edu}
-  \textperiodcentered\ \href{https://xyao2021.github.io/homepage/}{xyao2021.github.io/homepage}\\
-  \href{https://scholar.google.com/citations?user=gwTaRUkAAAAJ&hl=en}{Google Scholar}
-  \textperiodcentered\ \href{https://www.linkedin.com/in/xin-yao-aa9249204/}{LinkedIn}
-  \textperiodcentered\ \href{https://github.com/XYao2021}{GitHub}
+{\LARGE\bfseries\color{accent} Xin Yao}\\[3pt]
+Ph.D. Candidate, Department of Electrical and Computer Engineering, University of Florida\\
+EdgeAI Research Laboratory (advisor Prof. Mingyue Ji)\\[2pt]
+1928 SW 42nd Drive, Gainesville, FL 32607, USA \quad\textbullet\quad (+1) 571-236-1806 \quad\textbullet\quad \href{mailto:xyao@ufl.edu}{xyao@ufl.edu}\\
+\href{https://xyao2021.github.io/homepage/}{xyao2021.github.io/homepage} \quad\textbullet\quad \href{https://scholar.google.com/citations?user=gwTaRUkAAAAJ&hl=en}{Google Scholar} \quad\textbullet\quad \href{https://www.linkedin.com/in/xin-yao-aa9249204/}{LinkedIn} \quad\textbullet\quad \href{https://github.com/XYao2021}{GitHub}
 \end{center}
 
-% ============================================================================
-\section{Research Interests}
-My research lies at the intersection of machine learning, wireless communication systems, and
-information theory. I combine theoretical analysis with algorithm and system design to develop
-efficient, secure, and adaptive methods for distributed learning and dynamic network control, and
-evaluate them on real-world wireless testbeds that I build from the physical layer up.
+\section*{Research Interests}
+My research lies at the intersection of machine learning, wireless communication systems, edge computing, and information theory. I combine theoretical analysis with algorithm and system design to develop efficient, secure, and adaptive methods for distributed learning and dynamic network control, and I evaluate them on real-world wireless testbeds that I build from the physical layer up, from low-power LoRa networks to USRP software-defined radios running srsRAN 4G/5G and protocols I implement. SONAR, submitted to ICC 2027, is where I began bringing AI into this work, with language-model agents that generate network controllers tested on physical radios.
 
-\textbf{Keywords:} reinforcement learning for wireless networks; Lyapunov optimization under
-real-world constraints; LoRa and low-power multi-hop networks; software-defined radio and
-physical-layer implementation; wireless testbeds and remote experimentation platforms; decentralized
-and federated learning; error feedback and communication compression; information-theoretic secure
-aggregation; mmWave and RIS-assisted systems; wireless sensing and indoor localization.
+\textbf{Keywords.} Reinforcement learning for wireless networks; Lyapunov optimization under real-world constraints; LoRa and low-power multi-hop networks; software-defined radio and physical-layer implementation; wireless testbeds and remote experimentation platforms; language-model agents for network-controller synthesis; decentralized and federated learning; error feedback and communication compression; information-theoretic secure aggregation; mmWave and RIS-assisted systems; wireless sensing and indoor localization.
 
-% ============================================================================
-\section{Research Statement (Summary)}
-The long-term goal of my research is to make learning-driven wireless networks practical: networks that use
-machine learning to allocate resources, share spectrum, and adapt the physical layer, with guarantees of
-convergence, privacy, and reliability that continue to hold after deployment on real hardware. A central
-motivation is the gap between simulation and reality: many learning algorithms proposed for wireless systems
-perform well in simulation but degrade on real hardware, where carrier-frequency offsets, timing errors,
-interference, and hardware outages violate their design assumptions. I address this gap from both directions,
-by developing algorithms whose analysis accounts for real-world constraints and by building experimental
-infrastructure that makes over-the-air validation systematic.
-
-My doctoral research follows three threads: (1) \emph{adaptive error feedback for distributed learning},
-where A-DEFEAT compensates for communication-compression error in decentralized learning with a new proof
-technique and convergence analysis; (2) \emph{reinforcement learning for real-world wireless networks}, where
-objectives are derived from Lyapunov functions that encode real-world constraints, state representations are
-built from quantities a deployed system can observe, and Q-learning, DDPG, and MADDPG policies are compared in
-simulation before deployment (spectrum sharing on a real-time LoRa testbed, LDPP-MADDPG power allocation, and
-FORGE-LoRa multi-hop adaptation); and (3) \emph{wireless testbed development}, including the physical-layer
-stack of the EdgeAI Lab testbed, the UnionLabs remote-access platform, and UAV nodes.
-
-Future plans build on these results in three directions: cross-layer learning-based adaptation for
-heterogeneous networks with safe online learning under non-stationary conditions; digital-twin pipelines
-calibrated from testbed measurements, with quantitative criteria for when a policy trained in the twin can be
-deployed over the air; and decentralized learning over unreliable wireless networks with time-varying
-topologies, lossy links, and quantized communication, connected to secure aggregation under user dropouts. In
-parallel, I plan to develop UnionLabs into shared community infrastructure federated across institutions, with
-support sought from NSF CNS/NeTS and CCF programs, a CAREER proposal, and industry partnerships in AI-for-RAN.
-
-% ============================================================================
-\section{Education}
-\entry{University of Florida, Gainesville, FL, USA}{08/2024 -- present}
-\sub{Ph.D. Candidate, Electrical and Computer Engineering}
-\sub{Advisor: Prof. Mingyue Ji (EdgeAI Lab)}
-\sub{Research: machine learning for real-world wireless systems; learning-driven network control on live
-testbeds; decentralized learning}
-
-\vspace{0.4em}
-\entry{University of Utah, Salt Lake City, UT, USA}{08/2021 -- 07/2024}
-\sub{Ph.D. Studies, Electrical and Computer Engineering (transferred to the University of Florida with my
-advisor's research group in Aug.\ 2024)}
-\sub{Advisor: Prof. Mingyue Ji}
-
-\vspace{0.4em}
-\entry{George Washington University, Washington, DC, USA}{01/2020 -- 06/2021}
-\sub{M.S., Electrical Engineering}
-
-\vspace{0.4em}
-\entry{Tianjin University of Science and Technology (TUST), Tianjin, China}{09/2015 -- 06/2019}
-\sub{B.Eng., Electronic Information Engineering}
-
-% ============================================================================
-\section{Research Experience}
-\entry{Doctoral Researcher, EdgeAI Lab (Advisor: Prof. Mingyue Ji)}{08/2021 -- present}
-\sub{University of Utah (08/2021 -- 07/2024) and University of Florida (08/2024 -- present)}
-
-% ----------------------------------------------------------------------------
-\proj{EdgeAI Lab: Real-World Wireless Communication Testbed}
-\meta{University of Florida \textperiodcentered\ Platform for the over-the-air experiments in [C1], [C4] \textperiodcentered\ Submitted manuscript [S2]}
+\textbf{Current research topics and collaborating institutions}
 \begin{itemize}
-  \item Implemented the physical-layer software stack of the lab's wireless testbed in C++: modulation and demodulation, filtering, synchronization, channel encoding and decoding, and correction of carrier-frequency offset and phase offset.
-  \item Built Python APIs on top of the C++ core so that over-the-air experiments can be scripted, repeated,
-        and parameterized from a single configuration; designed automated experiment workflows that adapt to
-        heterogeneous physical-layer hardware (USRP software-defined radios and LoRa radios).
-  \item Deployed the group's learning algorithms (reinforcement-learning spectrum sharing, power allocation,
-        and per-slot LoRa PHY adaptation) on both lab-scale and building-scale deployments of the testbed,
-        and used the platform for the real-time LoRa experiments reported in [C4] and the multi-hop LoRa
-        experiments in [C1].
-  \item Developed SONAR, a hardware-in-the-loop approach to synthesizing wireless systems [S2].
-  \item Technologies: C++, Python, USRP software-defined radios, LoRa radios, Linux.
+\item Lyapunov-based control and path optimization for resilient multi-hop LoRa networks under interference, outages, and jamming (with Idaho National Laboratory)
+\item Multi-agent reinforcement learning for spectrum sharing and power allocation, evaluated on live radios and measured channel data (with Idaho National Laboratory and Technische Universit\"at Berlin)
+\item Communication-efficient decentralized learning with compression and error feedback (with the U.S. Army DEVCOM Army Research Laboratory and the University of Exeter)
+\item Information-theoretic secure aggregation for federated learning (with Huazhong University of Science and Technology, the University of North Texas, and Technische Universit\"at Berlin)
+\item Language-model agents that synthesize wireless network controllers with hardware in the loop (SONAR)
+\item Device-free wireless sensing and indoor localization with commodity LoRa radios
+\item Shared remote-access infrastructure for NextG and IoT testbeds (NSF-funded UnionLabs, with Virginia Tech, the University of Miami, Ajou University, Georgia Southern University, and The Ohio State University)
 \end{itemize}
 
-% ----------------------------------------------------------------------------
-\proj{UnionLabs: AWS-Based Remote Access and Sharing of NextG and IoT Testbeds}
-\meta{University of Florida \textperiodcentered\ NSF-funded project (CIRC award, 2025--2027) \textperiodcentered\ Poster [P2], demo [P3]}
+\section*{Research Statement (Summary)}
+The long-term goal of my research is to make learning-driven wireless networks practical, meaning networks that use machine learning to allocate resources, share spectrum, and adapt the physical layer, with guarantees of convergence, privacy, and reliability that continue to hold after deployment on real hardware. A central motivation is the gap between simulation and reality. Many learning algorithms proposed for wireless systems perform well in simulation but degrade on real hardware, where carrier-frequency offsets, timing errors, interference, and hardware outages violate their design assumptions. I address this gap from both directions, by developing algorithms whose analysis accounts for real-world constraints and by building experimental infrastructure that makes over-the-air validation systematic.
+
+My doctoral research follows four threads. (1) \textbf{Adaptive error feedback for distributed learning}, where A-DEFEAT compensates for communication-compression error in decentralized learning with a new proof technique and convergence analysis. (2) \textbf{Learning and Lyapunov-based control for real-world wireless networks}, where objectives are derived from Lyapunov functions that encode real-world constraints, state representations are built from quantities a deployed system can observe, and Q-learning, DDPG, and MADDPG policies are compared in simulation and on live hardware (spectrum sharing on a real-time LoRa testbed, LDPP-MADDPG power allocation, and LYRIC), together with Lyapunov drift-plus-penalty control for multi-hop LoRa adaptation (FORGE-LoRa). (3) \textbf{Wireless testbed development}, including the physical-layer stack of the EdgeAI Lab testbed, the UnionLabs remote-access platform, and UAV nodes. (4) \textbf{Language-model agents with hardware in the loop}, where SONAR generates network controllers and checks them on physical radios.
+
+Future plans build on these results in three directions. The first is cross-layer learning-based adaptation for heterogeneous networks with safe online learning under non-stationary conditions. The second is digital-twin pipelines calibrated from testbed measurements, with quantitative criteria for when a policy trained in the twin can be deployed over the air. The third is decentralized learning over unreliable wireless networks with time-varying topologies, lossy links, and quantized communication, connected to secure aggregation under user dropouts. In parallel, I plan to develop UnionLabs into shared community infrastructure federated across institutions, and I would seek external funding through NSF CNS/NeTS and CCF programs, a CAREER proposal, and industry partnerships in AI-for-RAN.
+
+\section*{Education}
+\textbf{University of Florida}, Gainesville, FL, USA \hfill 08/2024 -- present\\
+Ph.D. Candidate, Electrical and Computer Engineering. Advisor Prof. Mingyue Ji (EdgeAI Lab). Expected completion Spring 2027.\\
+Research. Machine learning for real-world wireless systems; learning-driven network control on live testbeds; decentralized learning.
+
+\textbf{University of Utah}, Salt Lake City, UT, USA \hfill 08/2021 -- 07/2024\\
+Ph.D. Studies, Electrical and Computer Engineering. Advisor Prof. Mingyue Ji. Transferred to the University of Florida with my advisor's research group in Aug. 2024.
+
+\textbf{George Washington University}, Washington, DC, USA \hfill 01/2020 -- 06/2021\\
+M.S., Electrical Engineering.
+
+\textbf{Tianjin University of Science and Technology (TUST)}, Tianjin, China \hfill 09/2015 -- 06/2019\\
+B.Eng., Electronic Information Engineering.
+
+\section*{Research Experience}
+\textbf{Doctoral Researcher, EdgeAI Lab (advisor Prof. Mingyue Ji)} \hfill 08/2021 -- present\\
+University of Utah (08/2021 -- 07/2024) and University of Florida (08/2024 -- present)
+
+\proj{EdgeAI Lab. Real-World Wireless Communication Testbed}{University of Florida \textbullet\ Platform for the over-the-air experiments in [C5], [C6], [C8] \textbullet\ Submitted manuscript [C4(S)]}
 \begin{itemize}
-  \item Developed and deployed the AWS-hosted web user interface for remote access to the wireless testbeds.
-  \item Designed the physical-layer (PHY) code for different hardware, including USRP software-defined radios and LoRa devices.
-  \item Designed the unified \emph{Union API} that reads and drives the different PHY implementations and
-        connects them automatically to users' learning or optimization algorithms, and an abstraction layer
-        that lets users run the PHY and Union API with a single command.
-  \item Supported collaborators from several universities in running their learning and optimization
-        algorithms through UnionLabs, including experiments that use multiple testbeds at the same time.
-  \item The UnionLabs and OSWireless demonstration won \emph{Third Prize} in the Demo Competition of the
-        Warren B.\ Nelms Annual IoT Conference (Dec.\ 2025).
-  \item Technologies: AWS, Java, JavaScript, JSON, Python, USRP, LoRa.
+\item Implemented the physical-layer software stack of the lab's wireless testbed in C++, covering modulation and demodulation, filtering, synchronization, channel encoding and decoding, and correction of carrier-frequency offset and phase offset.
+\item Built Python APIs on top of the C++ core so that over-the-air experiments can be scripted, repeated, and parameterized from a single configuration; designed automated experiment workflows that adapt to heterogeneous physical-layer hardware (USRP software-defined radios and LoRa radios).
+\item Deployed the group's learning and control algorithms (reinforcement-learning spectrum sharing, power allocation, and per-slot LoRa PHY adaptation) on both lab-scale and building-scale deployments of the testbed, and used the platform for the real-time LoRa experiments reported in [C8], the multi-hop LoRa experiments in [C5], and the localization measurements in [C6].
+\item Worked with srsRAN 4G/5G on USRP software-defined radios in early doctoral projects, alongside protocols implemented on the lab's own physical-layer stack; have recently begun working with OCUDU.
+\tech{C++, Python, USRP software-defined radios, srsRAN 4G/5G, LoRa radios, Linux.}
 \end{itemize}
 
-% ----------------------------------------------------------------------------
-\proj{Constrained Optimization for Real-World Wireless Problems with Reinforcement Learning}
-\meta{University of Utah and University of Florida \textperiodcentered\ Publications [C4], [C5]; poster [P4]; submitted manuscript [S4]}
+\proj{UnionLabs. AWS-Based Remote Access and Sharing of NextG and IoT Testbeds}{University of Florida \textbullet\ NSF-funded project (CIRC award, 2025--2027), with collaborators Prof. Zhangyu Guan (Virginia Tech), Dr. Mingzhe Chen (University of Miami), Dr. Bang Chul Jung (Ajou University), Dr. Myeung Suk Oh (Georgia Southern University), and Dr. Kevin Liu (The Ohio State University) \textbullet\ Poster [P4]; demonstrations [P5], [P2]}
 \begin{itemize}
-  \item Derived optimization objectives with Lyapunov drift-plus-penalty (LDPP) functions under real-world constraints, turning long-term constrained problems into per-slot decisions that a learning agent can act on.
-  \item Designed novel state representations for reinforcement-learning algorithms applied to
-        communication-system control, and evaluated Q-learning, DDPG, and MADDPG policies both in simulation
-        and in deployment on the EdgeAI Lab testbed.
-  \item Proposed LDPP-MADDPG, a distributed power-allocation scheme for mmWave cellular networks that combines a Lyapunov drift-plus-penalty objective with multi-agent DDPG [C5]; an earlier MADDPG power-allocation study used measurement data from the POWDER platform [P4].
-  \item Carried out an experimental evaluation of reinforcement learning for spectrum sharing on a real-time
-        LoRa testbed, comparing Q-learning, DDPG, and MADDPG on live hardware [C4].
-  \item Developed LYRIC, a Lyapunov-constrained multi-agent power-control method evaluated on measured LoRa
-        data [S4].
-  \item Technologies: Python, reinforcement learning, Lyapunov optimization.
+\item Developed and deployed the AWS-hosted web user interface for remote access to the wireless testbeds.
+\item Designed the physical-layer (PHY) code for different hardware, including USRP software-defined radios and LoRa devices.
+\item Designed the unified Union API that reads and drives the different PHY implementations and connects them automatically to users' learning or optimization algorithms, and an abstraction layer that lets users run the PHY and Union API with a single command.
+\item Supported collaborators from several universities in running their learning and optimization algorithms through UnionLabs, including experiments that use multiple testbeds at the same time.
+\item Developed automatic preparation of the UnionLabs environment and a ready starting point for new users, to be shown as a live demonstration at the Warren B. Nelms Annual IoT Conference in Dec. 2026 [P2].
+\item The UnionLabs and OSWireless demonstration won \textbf{Third Prize} in the Demo Competition of the Warren B. Nelms Annual IoT Conference (Dec. 2025).
+\tech{AWS, Java, JavaScript, ReactJS, JSON, Python, USRP, LoRa.}
 \end{itemize}
 
-% ----------------------------------------------------------------------------
-\proj{Resilient Multi-Hop LoRa Networks: FORGE-LoRa, HYDRA-LoRa, and CONCERT-LoRa}
-\meta{University of Florida \textperiodcentered\ Publication [C1] (IEEE MILCOM 2026, accepted); submitted manuscripts [S1], [S3]}
+\proj{SONAR. Hardware-in-the-Loop Synthesis of Wireless Systems with Language-Model Agents}{University of Florida \textbullet\ Submitted manuscript [C4(S)]}
 \begin{itemize}
-  \item Derived the optimization objective for multi-hop LoRa networks with Lyapunov functions under
-        real-world constraints.
-  \item Designed the system architecture for jointly adapting the LoRa PHY parameters on a per-slot basis.
-  \item Building on the joint-adaptation method, designed a path discovery and optimization system that keeps
-        multi-hop communication always live against interference and hardware outages.
-  \item Evaluated the dynamic-control policies in simulation and in deployment on the EdgeAI Lab testbed across
-        multiple reinforcement-learning algorithms.
-  \item Extended the LoRa mesh work to anti-jamming operation: HYDRA-LoRa, anti-jamming multi-path selection for
-        LoRa mesh networks [S1], and CONCERT-LoRa, certified concurrency for anti-jamming LoRa mesh networks [S3].
-  \item Technologies: LoRa, Python, reinforcement learning, Lyapunov optimization.
+\item Built SONAR on NVIDIA's AI Telco Engineer framework so that language-model agents generate executable network controllers, which decide radio settings, routes, and transmissions for a physical radio network.
+\item Developed the evaluation loop in which recorded-channel simulation screens candidate controllers, selected controllers run on physical radios, and the measurements guide the next design iteration.
+\tech{Python, NVIDIA AI Telco Engineer, language-model agents (Nemotron models via LiteLLM), EdgeAI Lab radio testbed.}
 \end{itemize}
 
-% ----------------------------------------------------------------------------
-\proj{LoFiLoc: Device-Free LoRa Fingerprint Indoor Localization with Commodity Radios}
-\meta{University of Florida \textperiodcentered\ Publication [C2] (IEEE MILCOM 2026 Workshops, accepted)}
+\proj{Constrained Optimization for Real-World Wireless Problems with Reinforcement Learning}{University of Utah and University of Florida \textbullet\ Publications [C8], [C9]; poster [P6]; submitted manuscript [J3(S)] \textbullet\ Collaborators Dr. Arupjyoti Bhuyan (Idaho National Laboratory), Dr. Xiang Zhang (TU Berlin)}
 \begin{itemize}
-  \item Device-free indoor localization based on fingerprints of LoRa channel measurements collected with commodity LoRa radios, so that a target carrying no device can be localized from changes in the wireless channel.
+\item Derived optimization objectives with Lyapunov drift-plus-penalty (LDPP) functions under real-world constraints, turning long-term constrained problems into per-slot decisions that a learning agent can act on.
+\item Designed novel state representations for reinforcement-learning algorithms applied to communication-system control, and evaluated Q-learning, DDPG, and MADDPG policies both in simulation and in deployment on the EdgeAI Lab testbed.
+\item Carried out an experimental evaluation of reinforcement learning for spectrum sharing on a real-time LoRa testbed [C8]. Designed and implemented a closed-loop platform that continuously measures received signal strength and interference and feeds them to the agents, so that the agents interact with a real wireless channel; compared centralized and decentralized Q-learning, DDPG, and MADDPG for distributed power allocation under shared spectrum on live hardware.
+\item Proposed LDPP-MADDPG, a distributed beam-scheduling and power-allocation scheme for mmWave cellular networks in which base stations operate as independent operators over shared spectrum [C9]. The scheme combines a Lyapunov drift-plus-penalty objective with multi-agent DDPG and introduces a local-observation feature that captures the penalty created by the stochastic constraints. An earlier MADDPG power-allocation study used measurement data from the POWDER platform [P6].
+\item Developed LYRIC, a Lyapunov-constrained multi-agent power-control method evaluated on measured LoRa data [J3(S)].
+\tech{Python, reinforcement learning (Q-learning, DDPG, MADDPG), Lyapunov optimization, LoRa testbed, POWDER measurement data.}
 \end{itemize}
 
-% ----------------------------------------------------------------------------
-\proj{Transformer-Enhanced DDPG for RIS-Assisted MU-MISO Systems (collaboration)}
-\meta{University of Florida \textperiodcentered\ Publication [C3] (IEEE MILCOM 2026 Workshops, accepted)}
+\proj{Resilient Multi-Hop LoRa Networks. FORGE-LoRa, HYDRA-LoRa, and CONCERT-LoRa}{University of Florida \textbullet\ Publication [C5] (IEEE MILCOM 2026); poster [P1]; submitted manuscripts [C3(S)], [J2(S)] \textbullet\ Collaborator Dr. Arupjyoti Bhuyan (Idaho National Laboratory)}
 \begin{itemize}
-  \item Contributed to a transformer-enhanced deep deterministic policy gradient (DDPG) method for the joint
-        design of base-station beamforming and reconfigurable-intelligent-surface (RIS) phase shifts in
-        multi-user MISO systems, with H.\ Zhang and O.\ Jiang.
+\item Derived the optimization objective for multi-hop LoRa networks with Lyapunov functions under real-world constraints, maximizing long-term goodput subject to minimum-goodput and average-power constraints.
+\item Designed the system architecture for jointly adapting the LoRa PHY parameters (spreading factor, coding rate, and transmit power) on a per-slot basis, driven by a packet-error-rate model that maps each link's SNR margin to its expected error rate [C5].
+\item Building on the joint-adaptation method, designed a path discovery and optimization system that keeps multi-hop communication live against interference and hardware outages.
+\item Evaluated the controller against the LoRaWAN Adaptive Data Rate (ADR) mechanism in simulation and in deployment on a real multi-hop prototype built from off-the-shelf LoRa hardware on the EdgeAI Lab testbed.
+\item Extended the LoRa mesh work to anti-jamming operation through HYDRA-LoRa, anti-jamming multi-path selection for LoRa mesh networks [C3(S)], and CONCERT-LoRa, certified concurrency for anti-jamming LoRa mesh networks [J2(S)].
+\tech{LoRa, Python, Lyapunov drift-plus-penalty optimization, multi-hop routing.}
 \end{itemize}
 
-% ----------------------------------------------------------------------------
-\proj{A-DEFEAT: Adaptive Error Feedback for Decentralized Learning}
-\meta{University of Utah and University of Florida \textperiodcentered\ Poster [P1]; manuscript [M1]}
+\proj{LoFiLoc. Device-Free LoRa Fingerprint Indoor Localization with Commodity Radios}{University of Florida \textbullet\ Publication [C6] (IEEE MILCOM 2026 Workshops); extension in preparation [C1(P)]}
 \begin{itemize}
-  \item Designed a new decentralized learning algorithm with an adaptive, discounted error-feedback
-        (error-compensation) mechanism for communication compression under data heterogeneity.
-  \item Proposed the key proof technique for the adaptive error-feedback mechanism, established convergence
-        guarantees for the proposed algorithm, and compared its convergence rate with existing algorithms.
-  \item Evaluated the algorithm against existing decentralized learning methods under a range of settings. \item Technologies: Python, optimization theory.
+\item Developed device-free indoor localization that locates a person who carries no device, using only the received signal strength (RSSI) reported by commodity LoRa radios, so that a link already deployed for communication also senses its environment.
+\item Designed a session-referenced deviation feature that cancels day-to-day baseline drift, a window-based per-visit soft vote that suppresses errors from transient interference, and a pluggable classification head with a proposed trust-weighted prototype classifier and an optional random-forest alternative.
+\item Deployed the system in an occupied seven-room apartment with one transmitter and eight SX1276 LoRa receivers, and evaluated it over calibration sessions collected on multiple days.
+\item Extending LoFiLoc to LoFiTrack, room-level tracking of a walking person from the RSSI of two time-shared commodity LoRa beacons on one channel, running live and unattended on the same apartment deployment, with calibration from a short guided walk in place of per-point holds; manuscript in preparation for IEEE DySPAN 2027 [C1(P)].
+\tech{LoRa (SX1276), Python, signal-strength fingerprinting, classification.}
 \end{itemize}
 
-% ----------------------------------------------------------------------------
-\proj{Information-Theoretic Secure Aggregation with Uncoded Groupwise Keys}
-\meta{University of Utah \textperiodcentered\ Publications [J1], [C6] \textperiodcentered\ With K.\ Wan, H.\ Sun, M.\ Ji, and G.\ Caire}
+\proj{Transformer-Enhanced DDPG for RIS-Assisted MU-MISO Systems (collaboration)}{University of Florida \textbullet\ Publication [C7] (IEEE MILCOM 2026 Workshops)}
 \begin{itemize}
-  \item Studied the information-theoretic secure aggregation problem of federated learning, in which the
-        server must learn only the aggregate of the users' models while tolerating user dropouts, under the
-        practical assumption that keys are mutually independent and each key is shared, uncoded, by a group
-        of $S$ users.
-  \item The work characterizes when uncoded groupwise keys are optimal: if $S > K-U$ (with $K$ users and
-        at most $K-U$ dropouts) a new scheme achieves the same optimal communication cost as the best coded-key
-        scheme, whereas if $S \le K-U$ uncoded groupwise key sharing is strictly sub-optimal.
-  \item Implemented the proposed secure-aggregation scheme on Amazon EC2 and compared it experimentally with
-        existing secure-aggregation schemes that use offline key sharing.
+\item Contributed to a transformer-enhanced deep deterministic policy gradient (DDPG) method for the joint design of base-station beamforming and reconfigurable-intelligent-surface (RIS) phase shifts in multi-user MISO systems, with H. Zhang and O. Jiang.
 \end{itemize}
 
-% ----------------------------------------------------------------------------
-\proj{UAV-Based Wireless Communication Platform}
-\meta{University of Florida}
+\proj{A-DEFEAT. Adaptive Error Feedback for Decentralized Learning}{University of Utah and University of Florida \textbullet\ Poster [P3]; submitted manuscript [C2(S)]; journal manuscript in preparation [J1(P)] \textbullet\ Collaborators Dr. Kevin S. Chan and Dr. Jake B. Perazzone (U.S. Army DEVCOM Army Research Laboratory), Prof. Shiqiang Wang (University of Exeter)}
 \begin{itemize}
-  \item Assembled customized drones and integrated wireless communication payloads for airborne networking
-        experiments; initialized and tuned the flight controllers; designed and mounted the customized
-        communication payloads.
-  \item Designed the communication protocol between ground devices and the airborne node.
-  \item Technologies: UAV flight controllers, embedded systems, wireless payload integration.
+\item Designed a new decentralized learning algorithm with an adaptive, discounted error-feedback (error-compensation) mechanism for communication compression under data heterogeneity.
+\item Proposed the key proof technique for the adaptive error-feedback mechanism, established convergence guarantees for the proposed algorithm, and compared its convergence rate with existing algorithms.
+\item Evaluated the algorithm against existing decentralized learning methods under a range of settings.
+\item Extending A-DEFEAT and its gradient-tracking variant A-DEFEAT-GT to momentum (A-DEFEAT-MT) and variance-reduction (A-DEFEAT-VR) variants in a unified framework, in a journal manuscript in preparation for \emph{IEEE Transactions on Signal Processing} [J1(P)].
+\tech{Python, optimization theory.}
 \end{itemize}
 
-% ----------------------------------------------------------------------------
-\proj{Master's Projects}
-\meta{George Washington University}
+\proj{Information-Theoretic Secure Aggregation with Uncoded Groupwise Keys}{University of Utah \textbullet\ Publications [J4], [C10] \textbullet\ With K. Wan (Huazhong University of Science and Technology), H. Sun (University of North Texas), M. Ji, and G. Caire (TU Berlin)}
 \begin{itemize}
-  \item \textbf{Age of Information with Energy Harvesting} (advisor: Prof.\ Omur Ozel). Analyzed the age of
-        information (AoI) in M/G/1/1 and idealized infinite-buffer queueing models, including variants with
-        packet deadlines, and investigated AoI-minimization strategies for the bufferless M/G/1/1 model with
-        packet deadlines.
-  \item \textbf{Secure File Transfer: Encryption and Decryption for FTP} (advisor: Prof.\ Tian Lan). Designed a
-        custom encryption/decryption scheme for FTP on Linux with client-side encryption and server-side
-        decryption of commands and data, and verified end-to-end encrypted FTP transmission.
+\item Studied the information-theoretic secure aggregation problem of federated learning, in which the server must learn only the aggregate of the users' models while tolerating user dropouts, under the practical assumption that keys are mutually independent and each key is shared, uncoded, by a group of $S$ users.
+\item The work characterizes when uncoded groupwise keys are optimal. If $S > K-U$ (with $K$ users and at most $K-U$ dropouts), a new scheme achieves the same optimal communication cost as the best coded-key scheme, whereas if $S \le K-U$ uncoded groupwise key sharing is strictly sub-optimal.
+\item Implemented the proposed secure-aggregation scheme on Amazon EC2 and compared it experimentally with existing secure-aggregation schemes that use offline key sharing.
 \end{itemize}
 
-% ----------------------------------------------------------------------------
-\proj{Undergraduate Projects}
-\meta{Tianjin University of Science and Technology}
+\proj{UAV-Based Wireless Communication Platform}{University of Florida}
 \begin{itemize}
-  \item \textbf{Voice-controlled smart-home system} (advisor: Jing He). Designed STM32F103-based hardware with
-        an LD3320 voice-recognition module; wrote firmware linking the microcontroller to speaker, PC, and
-        LCD peripherals; tested spoken commands with system feedback.
-  \item \textbf{License-plate recognition system} (advisor: Prof.\ Yang An). Built a MATLAB pipeline for image
-        capture from surveillance cameras, filtering (Hamming window), and character segmentation and matching.
-  \item \textbf{Android music player} (advisor: Prof.\ Ya-Jun Li). Developed a multi-format music player in Java
-        using Eclipse and the Android SDK.
-  \item \textbf{Digital counter} (advisor: Prof.\ Yu-liang Liu). Designed the counter circuit, selected
-        components, and assembled, tested, and debugged the board.
+\item Assembled customized drones and integrated wireless communication payloads for airborne networking experiments; initialized and tuned the flight controllers; designed and mounted the customized communication payloads.
+\item Designed the communication protocol between ground devices and the airborne node.
+\tech{UAV flight controllers, embedded systems, wireless payload integration.}
 \end{itemize}
 
-% ============================================================================
-\section{Publications}
-Google Scholar: \href{https://scholar.google.com/citations?user=gwTaRUkAAAAJ&hl=en}{scholar.google.com/citations?user=gwTaRUkAAAAJ}.
-My name is shown in bold.
+\subsection*{Master's Projects, George Washington University}
+\begin{itemize}
+\item \textbf{Age of Information with Energy Harvesting} (advisor Prof. Omur Ozel). Analyzed the age of information (AoI) in M/G/1/1 and idealized infinite-buffer queueing models, including variants with packet deadlines, and investigated AoI-minimization strategies for the bufferless M/G/1/1 model with packet deadlines.
+\item \textbf{Secure File Transfer. Encryption and Decryption for FTP} (advisor Prof. Tian Lan). Designed a custom encryption/decryption scheme for FTP on Linux with client-side encryption and server-side decryption of commands and data, and verified end-to-end encrypted FTP transmission.
+\end{itemize}
 
-\subsection{Conference Papers}
-\begin{enumerate}[label={[C\arabic*]}]
-  \item \me, A.\ Bhuyan, and M.\ Ji, ``FORGE-LoRa: Joint per-Slot PHY Adaptation for Multi-Hop LoRa
-        Networks,'' in \emph{Proc.\ IEEE Military Communications Conference (MILCOM)}, National Capital
-        Region, USA, Oct.\ 2026. (Accepted, to appear.)\\
-        {\small Joint per-slot adaptation of LoRa PHY parameters combined with path discovery and optimization
-        so that multi-hop LoRa communication stays live under interference and hardware outages; evaluated in
-        simulation and on the EdgeAI Lab testbed.}
-  \item \me, A.\ Bhuyan, and M.\ Ji, ``LoFiLoc: Device-Free LoRa Fingerprint Indoor Localization with
-        Commodity Radios,'' in \emph{Proc.\ IEEE Military Communications Conference (MILCOM) Workshops},
-        National Capital Region, USA, Oct.\ 2026. (Accepted, to appear.)
-  \item H.\ Zhang, O.\ Jiang, \me, and M.\ Ji, ``Transformer-Enhanced DDPG for Beamforming and Phase Shift
-        in RIS-Assisted MU-MISO Systems,'' in \emph{Proc.\ IEEE Military Communications Conference (MILCOM)
-        Workshops}, National Capital Region, USA, Oct.\ 2026. (Accepted, to appear.)
-  \item \me, X.\ Wang, H.\ Zhang, and M.\ Ji, ``Experimental Evaluation of Reinforcement Learning for Spectrum
-        Sharing on a Real-Time LoRa Testbed,'' in \emph{Proc.\ IEEE International Symposium on Spectrum
-        Innovation (DySPAN) Workshops}, Washington, DC, USA, May 2026, pp.\ 1--8.
-        DOI: \href{https://doi.org/10.1109/DySPAN69846.2026.11571139}{10.1109/DySPAN69846.2026.11571139}.\\
-        {\small Q-learning, DDPG, and MADDPG spectrum-sharing policies evaluated on live LoRa hardware in real
-        time rather than in simulation only.}
-  \item \me, A.\ Bhuyan, X.\ Zhang, and M.\ Ji, ``A Novel LDPP-MADDPG Approach for Distributed Power Allocation
-        in mmWave Cellular Networks,'' in \emph{Proc.\ IEEE Military Communications Conference (MILCOM), 6G and
-        Spectrum Security for Critical Communication (6GSECC) Workshop}, Los Angeles, CA, USA, Oct.\ 2025.\\
-        {\small Distributed power allocation for mmWave cellular networks that combines a Lyapunov
-        drift-plus-penalty (LDPP) objective with multi-agent deep deterministic policy gradient (MADDPG).}
-  \item K.\ Wan, \me, H.\ Sun, M.\ Ji, and G.\ Caire, ``GroupSecAgg: Information Theoretic Secure Aggregation
-        with Uncoded Groupwise Keys,'' in \emph{Proc.\ IEEE International Conference on Communications (ICC)},
-        Rome, Italy, May--Jun.\ 2023, pp.\ 3890--3895.
-        DOI: \href{https://doi.org/10.1109/ICC45041.2023.10279171}{10.1109/ICC45041.2023.10279171}.\\
-        {\small Conference version of [J1].}
+\subsection*{Undergraduate Projects, Tianjin University of Science and Technology}
+\begin{itemize}
+\item \textbf{Voice-controlled smart-home system} (advisor Jing He). Designed STM32F103-based hardware with an LD3320 voice-recognition module; wrote firmware linking the microcontroller to speaker, PC, and LCD peripherals; tested spoken commands with system feedback.
+\item \textbf{License-plate recognition system} (advisor Prof. Yang An). Built a MATLAB pipeline for image capture from surveillance cameras, filtering (Hamming window), and character segmentation and matching.
+\item \textbf{Android music player} (advisor Prof. Ya-Jun Li). Developed a multi-format music player in Java using Eclipse and the Android SDK.
+\item \textbf{Digital counter} (advisor Prof. Yu-liang Liu). Designed the counter circuit, selected components, and assembled, tested, and debugged the board.
+\end{itemize}
+
+\section*{Research Collaborators}
+\textbf{Government and national laboratories}
+\begin{itemize}
+\item Dr. Arupjyoti Bhuyan, Director of the Wireless Security Institute and Directorate Fellow, Idaho National Laboratory (U.S. Department of Energy). Co-author on FORGE-LoRa, HYDRA-LoRa, CONCERT-LoRa, LDPP-MADDPG, and LYRIC.
+\item Dr. Kevin S. Chan, Lead Research Electronics Engineer, U.S. Army DEVCOM Army Research Laboratory. Co-author on A-DEFEAT.
+\item Dr. Jake B. Perazzone, U.S. Army DEVCOM Army Research Laboratory. Co-author on A-DEFEAT.
+\end{itemize}
+\textbf{Academic}
+\begin{itemize}
+\item Prof. Mingyue Ji, University of Florida (Ph.D. advisor). Co-author on all doctoral work.
+\item Prof. Zhangyu Guan, Virginia Tech. Collaborator on the NSF-funded UnionLabs project.
+\item Prof. Shiqiang Wang, University of Exeter. Co-author on A-DEFEAT.
+\item Prof. Kai Wan (Huazhong University of Science and Technology), Prof. Hua Sun (University of North Texas), and Prof. Giuseppe Caire (Technische Universit\"at Berlin). Co-authors on secure aggregation.
+\item Dr. Xiang Zhang, Technische Universit\"at Berlin. Co-author on LDPP-MADDPG and LYRIC.
+\item Dr. Mingzhe Chen, University of Miami. Collaborator on the NSF-funded UnionLabs project.
+\item Dr. Bang Chul Jung, Ajou University. Collaborator on the NSF-funded UnionLabs project.
+\item Dr. Myeung Suk Oh, Georgia Southern University. Collaborator on the NSF-funded UnionLabs project.
+\item Dr. Kevin Liu, The Ohio State University. Collaborator on the NSF-funded UnionLabs project.
+\end{itemize}
+
+\section*{Publications}
+Each list is in reverse chronological order. Entries marked \textbf{(S)}, as in [J2(S)], are submitted and under review; \textbf{(P)} marks a manuscript in preparation, as in [J1(P)] and [C1(P)]; all other entries are published. My name is shown in bold. Google Scholar \href{https://scholar.google.com/citations?user=gwTaRUkAAAAJ&hl=en}{profile}.
+
+\textbf{Journal Articles}
+\begin{itemize}[leftmargin=3.9em,labelwidth=3.5em,labelsep=0.4em,align=left]
+\item[{[J1(P)]}] \textbf{X. Yao}, S. Wang, K. S. Chan, and M. Ji, ``A-DEFEAT: A Unified Adaptive Error-Feedback Framework for Compressed Decentralized Learning with Gradient Tracking, Momentum, and Variance Reduction,'' in preparation for \emph{IEEE Transactions on Signal Processing}.\\
+{\small Journal extension of [C2(S)], generalizing A-DEFEAT and A-DEFEAT-GT to A-DEFEAT-MT and A-DEFEAT-VR.}
+\item[{[J2(S)]}] \textbf{X. Yao}, A. Bhuyan, and M. Ji, ``CONCERT-LoRa: Certified Concurrency for Anti-Jamming LoRa Mesh Networks,'' submitted to \emph{IEEE Internet of Things Journal}.
+\item[{[J3(S)]}] \textbf{X. Yao}, X. Zhang, A. Bhuyan, and M. Ji, ``LYRIC: Lyapunov-Constrained Multi-Agent Power Control with Measured LoRa Evaluation,'' submitted to \emph{IEEE Transactions on Cognitive Communications and Networking}.
+\item[{[J4]}] K. Wan, \textbf{X. Yao}, H. Sun, M. Ji, and G. Caire, ``On the Information Theoretic Secure Aggregation with Uncoded Groupwise Keys,'' \emph{IEEE Transactions on Information Theory}, vol.~70, no.~9, pp.~6596--6619, Sept. 2024. DOI \href{https://doi.org/10.1109/TIT.2024.3422087}{10.1109/TIT.2024.3422087}. Preprint \href{https://arxiv.org/abs/2204.11364}{arXiv:2204.11364}.\\
+{\small Characterizes the optimal communication cost of information-theoretic secure aggregation when keys are mutually independent and each key is shared by a group of $S$ users. Uncoded groupwise keys are optimal when $S > K-U$ and strictly sub-optimal when $S \le K-U$. Includes an Amazon EC2 implementation compared against existing schemes with offline key sharing.}
+\end{itemize}
+\textbf{Conference Papers}
+\begin{itemize}[leftmargin=3.9em,labelwidth=3.5em,labelsep=0.4em,align=left]
+\item[{[C1(P)]}] \textbf{X. Yao}, A. Bhuyan, and M. Ji, ``LoFiTrack: Live Device-Free Tracking of a Walking Person from the RSSI of Two LoRa Beacons on One Channel,'' in preparation for \emph{IEEE International Symposium on Spectrum Innovation (DySPAN)}, 2027.\\
+{\small Extends [C6] from locating a stationary person under one beacon to room-level tracking of a walking person from two time-shared commodity LoRa beacons on one channel, calibrated from a short guided walk.}
+\item[{[C2(S)]}] \textbf{X. Yao}, S. Wang, J. Perazzone, K. S. Chan, and M. Ji, ``Compressed Decentralized Learning with Error-Feedback under Data Heterogeneity'' (A-DEFEAT), submitted to \emph{International Conference on Learning Representations (ICLR)}, 2027.
+\item[{[C3(S)]}] \textbf{X. Yao}, A. Bhuyan, and M. Ji, ``HYDRA-LoRa: Anti-Jamming Multi-Path Selection for LoRa Mesh Networks,'' submitted to \emph{IEEE International Conference on Communications (ICC)}, 2027.
+\item[{[C4(S)]}] \textbf{X. Yao} and M. Ji, ``SONAR: Hardware-in-the-Loop Synthesis of Wireless Systems,'' submitted to \emph{IEEE International Conference on Communications (ICC)}, 2027.
+\item[{[C5]}] \textbf{X. Yao}, A. Bhuyan, and M. Ji, ``FORGE-LoRa: Joint per-Slot PHY Adaptation for Multi-Hop LoRa Networks,'' in \emph{Proc. IEEE Military Communications Conference (MILCOM)}, National Capital Region, USA, Oct. 2026.\\
+{\small Per-slot Lyapunov drift-plus-penalty control that jointly adapts spreading factor, coding rate, and transmit power, combined with path discovery and optimization so that multi-hop LoRa communication stays live under interference and hardware outages; evaluated against LoRaWAN ADR in simulation and on a real multi-hop prototype.}
+\item[{[C6]}] \textbf{X. Yao} and M. Ji, ``LoFiLoc: Device-Free LoRa Fingerprint Indoor Localization with Commodity Radios,'' in \emph{Proc. IEEE Military Communications Conference (MILCOM) Workshops}, National Capital Region, USA, Oct. 2026.\\
+{\small Device-free localization of a person from RSSI alone, reported by commodity LoRa radios, with drift-cancelling features, interference-suppressing voting, and a trust-weighted prototype classifier; deployed in an occupied apartment.}
+\item[{[C7]}] H. Zhang, O. Jiang, \textbf{X. Yao}, and M. Ji, ``Transformer-Enhanced DDPG for Beamforming and Phase Shift in RIS-Assisted MU-MISO Systems,'' in \emph{Proc. IEEE Military Communications Conference (MILCOM) Workshops}, National Capital Region, USA, Oct. 2026.
+\item[{[C8]}] \textbf{X. Yao}, X. Wang, H. Zhang, and M. Ji, ``Experimental Evaluation of Reinforcement Learning for Spectrum Sharing on a Real-Time LoRa Testbed,'' in \emph{Proc. IEEE International Symposium on Spectrum Innovation (DySPAN) Workshops}, Washington, DC, USA, May 2026, pp.~1--8. DOI \href{https://doi.org/10.1109/DySPAN69846.2026.11571139}{10.1109/DySPAN69846.2026.11571139}.\\
+{\small Q-learning, DDPG, and MADDPG spectrum-sharing policies evaluated on live LoRa hardware in real time rather than in simulation only.}
+\item[{[C9]}] \textbf{X. Yao}, A. Bhuyan, X. Zhang, and M. Ji, ``A Novel LDPP-MADDPG Approach for Distributed Power Allocation in mmWave Cellular Networks,'' in \emph{Proc. IEEE Military Communications Conference (MILCOM), 6G and Spectrum Security for Critical Communication (6GSECC) Workshop}, Los Angeles, CA, USA, Oct. 2025. DOI \href{https://doi.org/10.1109/MILCOM64451.2025.11310668}{10.1109/MILCOM64451.2025.11310668}.\\
+{\small Distributed power allocation for mmWave cellular networks that combines a Lyapunov drift-plus-penalty (LDPP) objective with multi-agent deep deterministic policy gradient (MADDPG).}
+\item[{[C10]}] K. Wan, \textbf{X. Yao}, H. Sun, M. Ji, and G. Caire, ``GroupSecAgg: Information Theoretic Secure Aggregation with Uncoded Groupwise Keys,'' in \emph{Proc. IEEE International Conference on Communications (ICC)}, Rome, Italy, May--Jun. 2023, pp.~3890--3895. DOI \href{https://doi.org/10.1109/ICC45041.2023.10279171}{10.1109/ICC45041.2023.10279171}.\\
+{\small Conference version of [J4].}
+\end{itemize}
+
+\section*{Presentations, Posters and Demonstrations}
+\textbf{Conference Presentations}
+\begin{itemize}[leftmargin=2.4em,labelwidth=2em,align=left]
+\item[{[T1]}] ``FORGE-LoRa: Joint per-Slot PHY Adaptation for Multi-Hop LoRa Networks,'' IEEE Military Communications Conference (MILCOM), National Capital Region, USA, Oct. 2026.
+\item[{[T2]}] ``LoFiLoc: Device-Free LoRa Fingerprint Indoor Localization with Commodity Radios,'' IEEE MILCOM Workshops, National Capital Region, USA, Oct. 2026.
+\item[{[T3]}] ``Experimental Evaluation of Reinforcement Learning for Spectrum Sharing on a Real-Time LoRa Testbed,'' IEEE DySPAN Workshops, Washington, DC, USA, May 2026.
+\item[{[T4]}] ``A Novel LDPP-MADDPG Approach for Distributed Power Allocation in mmWave Cellular Networks,'' IEEE MILCOM 6GSECC Workshop, Los Angeles, CA, USA, Oct. 2025.
+\item[{[T5]}] ``GroupSecAgg: Information Theoretic Secure Aggregation with Uncoded Groupwise Keys,'' IEEE International Conference on Communications (ICC), Rome, Italy, Jun. 2023.
+\item[{[T6]}] ``High-Band Frequency Spectrum for 5G'' (team presentation), George Washington University, Washington, DC, USA, 2020.
+\end{itemize}
+\textbf{Posters and Demonstrations}
+\begin{itemize}[leftmargin=2.4em,labelwidth=2em,align=left]
+\item[{[P1]}] ``FORGE-LoRa: Joint per-Slot PHY Adaptation for Multi-Hop LoRa Networks'' (poster), Warren B. Nelms Annual IoT Conference, University of Florida, Gainesville, FL, USA, Dec. 2026. (Upcoming.)
+\item[{[P2]}] ``UnionLabs: Automatic Preparation and a Ready Starting Point for New Users'' (live demonstration), Warren B. Nelms Annual IoT Conference, University of Florida, Gainesville, FL, USA, Dec. 2026. (Upcoming.)
+\item[{[P3]}] ``A-DEFEAT: An Adaptively Discounted Error-Feedback Algorithm for Decentralized Learning'' (poster), North American School of Information Theory (NASIT), Brigham Young University, Provo, UT, USA, Jun. 2026.
+\item[{[P4]}] ``UnionLabs: Shared Access to Heterogeneous Wireless IoT and Wireless OS Testbeds'' (poster), Warren B. Nelms Annual IoT Conference, University of Florida, Gainesville, FL, USA, Dec. 2025.
+\item[{[P5]}] ``OSWireless: Automatic System to Maximize Network Throughputs'' (live demonstration), Warren B. Nelms Annual IoT Conference, University of Florida, Gainesville, FL, USA, Dec. 2025. \textbf{Third Prize, Demo Competition.}
+\item[{[P6]}] ``MADDPG-Based Power Allocation Scheme Using Measurement Data from POWDER'' (poster), Warren B. Nelms Annual IoT Conference, University of Florida, Gainesville, FL, USA, Dec. 2024.
+\end{itemize}
+
+\section*{Teaching Experience}
+\begin{itemize}
+\item \textbf{Lab Instructor, EEL 4514 Communication Systems and Components, University of Florida.} Designed and verified the lab sessions on signal processing, held and graded the lab sessions, and held office hours for course-related questions before exams.
+\item \textbf{Teaching Assistant, ECE 5510 Random Processes, University of Utah.} Assisted in designing the lecture slides, graded homework and exams, and held weekly office hours to answer course-related questions.
+\item \textbf{Project Instructor, UnionLabs Web Design (undergraduate project), University of Florida.} Directed and guided students through the web-design part of the UnionLabs project, from background knowledge to design skills including JavaScript, ReactJS, and the communication logic between the web interface and the testbeds.
+\item \textbf{Project Instructor, Automatic System Design (undergraduate project), University of Florida.} Guided students to understand the structure and code of the telco system, an AI-in-the-loop evaluation system, and how to use the code for customized purposes, and introduced hardware-in-the-loop design based on the telco system.
+\item \textbf{Testbed Training and Onboarding, UnionLabs.} Onboard collaborators from multiple universities, ranging from machine-learning researchers new to radios to communications engineers new to reinforcement learning, onto the shared wireless testbeds. Prepare documentation for the customized system, design worked examples, and structure first sessions so that every user runs a real over-the-air experiment quickly.
+\end{itemize}
+
+\section*{Mentoring}
+\textbf{Undergraduate students}, University of Florida
+\begin{enumerate}[leftmargin=1.6em]
+\item Labib M. Hossain, Summer 2026 -- Fall 2026. UnionLabs Web Design (JavaScript, ReactJS, and interface-to-testbed communication logic).
+\item Grace Mihiral, Fall 2026. Automatic System Design (telco system, AI-in-the-loop evaluation, and hardware-in-the-loop design).
+\item Sarthak Gupta, Fall 2026. Automatic System Design (telco system, AI-in-the-loop evaluation, and hardware-in-the-loop design).
 \end{enumerate}
 
-\subsection{Journal Articles}
-\begin{enumerate}[label={[J\arabic*]}]
-  \item K.\ Wan, \me, H.\ Sun, M.\ Ji, and G.\ Caire, ``On the Information Theoretic Secure Aggregation with
-        Uncoded Groupwise Keys,'' \emph{IEEE Transactions on Information Theory}, vol.\ 70, no.\ 9,
-        pp.\ 6596--6619, Sept.\ 2024.
-        DOI: \href{https://doi.org/10.1109/TIT.2024.3422087}{10.1109/TIT.2024.3422087}.
-        Preprint: \href{https://arxiv.org/abs/2204.11364}{arXiv:2204.11364}.\\
-        {\small Characterizes the optimal communication cost of information-theoretic secure aggregation when
-        keys are mutually independent and each key is shared by a group of $S$ users: uncoded groupwise keys
-        are optimal when $S > K-U$ and strictly sub-optimal when $S \le K-U$. Includes an Amazon EC2
-        implementation compared against existing schemes with offline key sharing.}
-\end{enumerate}
+\section*{Teaching Statement (Summary)}
+\textbf{Philosophy.} Students learn engineering most effectively when theory is connected to the physical world as early and as often as possible. In wireless communications and machine learning this connection is concrete. A matched filter derived on paper can be observed as a constellation diagram from the student's own transmitter, a coding theorem can be verified as a measured shift in a bit-error-rate curve, and a learning algorithm can be run and measured on real machines. My goal is to help students build a solid conceptual foundation, the practical skill to implement and debug real systems, and the confidence that comes from seeing their own analysis confirmed by measurement.
 
-\subsection{Submitted Manuscripts (Under Review)}
-\begin{enumerate}[label={[S\arabic*]}]
-  \item \me, A.\ Bhuyan, and M.\ Ji, ``HYDRA-LoRa: Anti-Jamming Multi-Path Selection for LoRa Mesh Networks,''
-        submitted to \emph{IEEE International Conference on Communications (ICC)}, 2027.
-  \item \me\ and M.\ Ji, ``SONAR: Hardware-in-the-Loop Synthesis of Wireless Systems,'' submitted to
-        \emph{IEEE International Conference on Communications (ICC)}, 2027.
-  \item \me, A.\ Bhuyan, and M.\ Ji, ``CONCERT-LoRa: Certified Concurrency for Anti-Jamming LoRa Mesh
-        Networks,'' submitted to \emph{IEEE Internet of Things Journal}.
-  \item \me, X.\ Zhang, A.\ Bhuyan, and M.\ Ji, ``LYRIC: Lyapunov-Constrained Multi-Agent Power Control with
-        Measured LoRa Evaluation,'' submitted to \emph{IEEE Transactions on Cognitive Communications and
-        Networking}.
-\end{enumerate}
+\textbf{Methods.} Theoretical foundations in class, with emphasis on the mathematical expressions; live software-defined-radio demonstrations so that effects such as intersymbol interference and coding gain are observed as they are derived; project-based homework tested over the air or against recorded real signals through remote testbed access of the kind UnionLabs provides; and projects scaffolded in explicit stages from simulation to hardware, so that students with different preparation all reach the final over-the-air milestone. Learning is assessed through staged milestones that reward implementation, measurement, and debugging alongside analysis, and the course is adjusted using student feedback throughout the semester.
 
-\subsection{Other Manuscripts}
-\begin{enumerate}[label={[M\arabic*]}]
-  \item \me, S.\ Wang, J.\ Perazzone, K.\ S.\ Chan, and M.\ Ji, ``Compressed Decentralized Learning with
-        Error-Feedback under Data Heterogeneity,'' 2026.
-\end{enumerate}
+\textbf{Mentoring.} Early contact with the real system followed by growing ownership. A new student runs a working over-the-air experiment in the first weeks, then takes responsibility for one testbed component or algorithm, growing from reproducing a known result to extending it to leading a first-authored paper, with regular individual meetings, projects matched to each student's strengths, and frequent presentations.
 
-% ============================================================================
-\section{Presentations, Posters and Demonstrations}
-\subsection{Conference Presentations}
-\begin{enumerate}[label={[T\arabic*]}]
-    \item ``FORGE-LoRa: Joint per-Slot PHY Adaptation for Multi-Hop LoRa Networks,'' IEEE Military
-        Communications Conference (MILCOM), National Capital Region, USA, Oct.\ 2026. (Upcoming.)
-  \item ``LoFiLoc: Device-Free LoRa Fingerprint Indoor Localization with Commodity Radios,'' IEEE Military
-        Communications Conference (MILCOM) Workshops, National Capital Region, USA, Oct.\ 2026. (Upcoming.)
-  \item ``Experimental Evaluation of Reinforcement Learning for Spectrum Sharing on a Real-Time LoRa Testbed,''
-        IEEE International Symposium on Spectrum Innovation (DySPAN) Workshops, Washington, DC, USA, May 2026.
-  \item ``A Novel LDPP-MADDPG Approach for Distributed Power Allocation in mmWave Cellular Networks,'' IEEE
-        MILCOM 6G and Spectrum Security for Critical Communication (6GSECC) Workshop, Los Angeles, CA, USA,
-        Oct.\ 2025.
-  \item ``GroupSecAgg: Information Theoretic Secure Aggregation with Uncoded Groupwise Keys,'' IEEE
-        International Conference on Communications (ICC), Rome, Italy, Jun.\ 2023.
-  \item ``High-Band Frequency Spectrum for 5G'' (team presentation), George Washington University,
-        Washington, DC, USA, 2020.
-\end{enumerate}
+\textbf{Courses I am prepared to teach.} Signals and systems, digital communications, and digital signal processing (undergraduate); wireless system design and networking courses that connect the physical and MAC layers; machine learning for wireless networks (graduate); and a new project-based course, \emph{Hands-On Wireless Systems with Software-Defined Radios}, in which students implement a complete communication link and then apply a learning algorithm to control it.
 
-\subsection{Posters and Demonstrations}
-\begin{enumerate}[label={[P\arabic*]}]
-  \item ``A-DEFEAT: An Adaptively Discounted Error-Feedback Algorithm for Decentralized Learning'' (poster),
-        North American School of Information Theory (NASIT), Brigham Young University, Provo, UT, USA,
-        Jun.\ 2026.
-  \item ``UnionLabs: Shared Access to Heterogeneous Wireless IoT and Wireless OS Testbeds'' (poster), Warren B.\
-        Nelms Annual IoT Conference, University of Florida, Gainesville, FL, USA, Dec.\ 2025.
-  \item ``OSWireless: Automatic System to Maximize Network Throughputs'' (live demonstration), Warren B.\ Nelms
-        Annual IoT Conference, University of Florida, Gainesville, FL, USA, Dec.\ 2025. \emph{Third Prize,
-        Demo Competition.}
-  \item ``MADDPG-Based Power Allocation Scheme Using Measurement Data from POWDER'' (poster), Warren B.\ Nelms
-        Annual IoT Conference, University of Florida, Gainesville, FL, USA, Dec.\ 2024.
-\end{enumerate}
-
-% ============================================================================
-\section{Teaching Experience}
+\section*{Professional Service}
 \begin{itemize}
-  \item \textbf{Lab Instructor, EEL 4514 Communication Systems and Components, University of Florida.} Designed
-        and verified the lab sessions on signal processing, held and graded the lab sessions, and held office
-        hours for course-related questions before exams.
-  \item \textbf{Teaching Assistant, ECE 5510 Random Processes, University of Utah.} Assisted in designing the
-        lecture slides, graded homework and exams, and held weekly office hours to answer course-related
-        questions.
-  \item \textbf{Project Instructor, UnionLabs Web Design (undergraduate project), University of Florida.}
-        Directed and guided students through the web-design part of the UnionLabs project, from background
-        knowledge to design skills including JavaScript, ReactJS, and the communication logic between the web
-        interface and the testbeds.
-  \item \textbf{Project Instructor, Automatic System Design (undergraduate project), University of Florida.}
-        Guided students to understand the structure and code of the telco system, an AI-in-the-loop evaluation
-        system, and how to use the code for customized purposes, and introduced hardware-in-the-loop design
-        based on the telco system.
-  \item \textbf{Testbed Training and Onboarding, UnionLabs.} Onboard collaborators from multiple universities,
-        ranging from machine-learning researchers new to radios to communications engineers new to
-        reinforcement learning, onto the shared wireless testbeds: prepare documentation for the customized
-        system, design worked examples, and structure first sessions so that every user runs a real
-        over-the-air experiment quickly.
+\item Reviewer for \emph{IEEE Transactions on Information Theory} (TIT).
+\item Reviewer for \emph{IEEE Transactions on Parallel and Distributed Systems} (TPDS).
+\item Reviewer for \emph{IEEE Transactions on Green Communications and Networking} (TGCN).
+\item Reviewer for \emph{IEEE Transactions on Cognitive Communications and Networking} (TCCN).
+\item Reviewer for \emph{IEEE Communications Magazine}.
+\item Reviewer for \emph{Computer Networks} (Elsevier).
+\item Reviewer for \emph{EURASIP Journal on Wireless Communications and Networking} (JWCN).
+\item Judge, Gator Quant Hack Competition, 2026.
+\item Student Volunteer, IEEE Military Communications Conference (MILCOM), National Capital Region, USA, 2026.
+\item Student Volunteer, IEEE International Conference on Computer Communications (INFOCOM), 2022.
 \end{itemize}
 
-% ============================================================================
-\section{Teaching Statement (Summary)}
-\textbf{Philosophy.} Students learn engineering most effectively when theory is connected to the physical
-world as early and as often as possible. In wireless communications and machine learning this connection is
-concrete: a matched filter derived on paper can be observed as a constellation diagram from the student's own
-transmitter, a coding theorem can be verified as a measured shift in a bit-error-rate curve, and a learning
-algorithm can be run and measured on real machines. My goal is to help students build a solid conceptual
-foundation, the practical skill to implement and debug real systems, and the confidence that comes from seeing
-their own analysis confirmed by measurement.
-
-\textbf{Methods.} Theoretical foundations in class, with emphasis on the mathematical expressions; live
-software-defined-radio demonstrations so that effects such as intersymbol interference and coding gain are
-observed as they are derived; project-based homework tested over the air or against recorded real signals
-through remote testbed access of the kind UnionLabs provides; and projects scaffolded in explicit stages from
-simulation to hardware, so that students with different preparation all reach the final over-the-air
-milestone. Learning is assessed through staged milestones that reward implementation, measurement, and
-debugging alongside analysis, and the course is adjusted using student feedback throughout the semester.
-
-\textbf{Mentoring.} Early contact with the real system followed by growing ownership: a new student runs a
-working over-the-air experiment in the first weeks, then takes responsibility for one testbed component or
-algorithm, growing from reproducing a known result to extending it to leading a first-authored paper, with
-regular individual meetings, projects matched to each student's strengths, and frequent presentations.
-
-\textbf{Courses I am prepared to teach.} Signals and systems, digital communications, and digital signal
-processing (undergraduate); wireless system design and networking courses that connect the physical and MAC
-layers; machine learning for wireless networks (graduate); and a new project-based course, \emph{Hands-On
-Wireless Systems with Software-Defined Radios}, in which students implement a complete communication link and
-then apply a learning algorithm to control it.
-
-% ============================================================================
-\section{Professional Service}
+\section*{Technical Skills}
 \begin{itemize}
-  \item Reviewer for \emph{IEEE Transactions on Parallel and Distributed Systems} (TPDS), \emph{IEEE Transactions on
-        Information Theory} (TIT), \emph{IEEE Transactions on Green Communications and Networking} (TGCN),
-        \emph{IEEE Communications Magazine}, \emph{IEEE Transactions on Cognitive Communications and Networking}
-        (TCCN), \emph{Computer Networks} (Elsevier), and \emph{EURASIP Journal on Wireless Communications and
-        Networking} (JWCN)
-  \item Judge, Gator Quant Hack Competition \hfill 2026
-  \item Student Volunteer, IEEE Military Communications Conference (MILCOM), National Capital Region, USA \hfill 2026
-  \item Student Volunteer, IEEE International Conference on Computer Communications (INFOCOM) \hfill 2022
+\item \textbf{Programming.} Python, C/C++, Java, JavaScript, ReactJS, MATLAB, Arduino, JSON, XHTML/DHTML.
+\item \textbf{Machine learning and AI.} Reinforcement learning (Q-learning, DDPG, MADDPG, transformer-enhanced policies), federated learning, decentralized learning, communication compression and error feedback, secure aggregation, distributed and parallel computing, language-model agents for controller synthesis (NVIDIA AI Telco Engineer).
+\item \textbf{Wireless communications and signal processing.} Physical-layer implementation (modulation and demodulation, synchronization, filtering, channel encoding and decoding, carrier-frequency and phase-offset correction), software-defined radio (USRP), srsRAN 4G/5G, LoRa and low-power multi-hop networking, mmWave power allocation, RIS-assisted systems, real-world testbed development, network protocol analysis, signal-strength fingerprinting for localization.
+\item \textbf{Optimization and theory.} Lyapunov drift-plus-penalty optimization, convergence analysis of decentralized learning, information-theoretic secure aggregation, queueing models and age of information.
+\item \textbf{Embedded, cloud, and systems.} STM32 microcontrollers, Android SDK (Eclipse/JDK), AWS (EC2 and web deployment), Linux, UAV flight-controller setup and payload integration.
+\item \textbf{Design and productivity tools.} AutoCAD, Siemens NX, Sharp3D, Adobe (Photoshop, Premiere Pro, After Effects, Acrobat), MS Office, \LaTeX.
 \end{itemize}
 
-% ============================================================================
-\section{Technical Skills}
+\section*{Honors and Awards}
 \begin{itemize}
-  \item \textbf{Programming:} Python, C/C++, Java, JavaScript, MATLAB, Arduino, JSON, XHTML/DHTML.
-  \item \textbf{Machine learning:} reinforcement learning (Q-learning, DDPG, MADDPG, transformer-enhanced
-        policies), federated learning, decentralized learning, communication compression and error feedback,
-        secure aggregation, distributed and parallel computing.
-  \item \textbf{Wireless communications and signal processing:} physical-layer implementation (modulation and
-        demodulation, synchronization, filtering, channel encoding and decoding, carrier-frequency and
-        phase-offset correction), software-defined radio (USRP), LoRa and low-power multi-hop networking,
-        mmWave power allocation, RIS-assisted systems, real-world testbed development, network protocol
-        analysis, wireless fingerprinting for localization.
-  \item \textbf{Optimization and theory:} Lyapunov drift-plus-penalty optimization, convergence analysis of
-        decentralized learning, information-theoretic secure aggregation, queueing models and age of
-        information.
-  \item \textbf{Embedded, cloud, and systems:} STM32 microcontrollers, Android SDK (Eclipse/JDK), AWS (EC2 and
-        web deployment), Linux, UAV flight-controller setup and payload integration.
-  \item \textbf{Design and productivity tools:} AutoCAD, Siemens NX, Sharp3D, Adobe (Photoshop, Premiere Pro,
-        After Effects, Acrobat), MS Office, \LaTeX.
+\item Overall Runner-Up (Second Prize), NSF SpectrumX Student Data \& Algorithm Competition (SpX-DAC), team with X. Wang and Y. Hu, advised by Prof. Mingyue Ji; 37 teams from 25 institutions. \hfill 2026
+\item Third Prize, Demo Competition, Warren B. Nelms Annual IoT Conference, University of Florida (UnionLabs / OSWireless demonstration). \hfill 2025
+\item Third-Prize Scholarship, Tianjin University of Science and Technology. \hfill 2017
+\item Advanced Individual of Social Work, Tianjin University of Science and Technology. \hfill 2016
+\item Excellent League Member, Tianjin University of Science and Technology. \hfill 2016
 \end{itemize}
 
-% ============================================================================
-\section{Honors and Awards}
-\begin{itemize}
-  \item Overall Runner-Up (Second Prize), NSF SpectrumX Student Data \& Algorithm Competition (SpX-DAC),
-        team with X.\ Wang and Y.\ Hu, advised by Prof.\ Mingyue Ji; 37 teams from 25 institutions \hfill 2026
-  \item Third Prize, Demo Competition, Warren B.\ Nelms Annual IoT Conference, University of Florida
-        (UnionLabs / OSWireless demonstration) \hfill 2025
-  \item Third-Prize Scholarship, Tianjin University of Science and Technology \hfill 2017
-  \item Advanced Individual of Social Work, Tianjin University of Science and Technology \hfill 2016
-  \item Excellent League Member, Tianjin University of Science and Technology \hfill 2016
-\end{itemize}
 
-\vspace{0.6em}
-{\small\textit{Last updated: September 2026.}}
-
+\par\vspace{6pt}{\small Last updated October 2026.}
 \end{document}
